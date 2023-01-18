@@ -1,0 +1,315 @@
+:root {
+    --menu-color: #ef534f;
+    --menu-color-light: #ff867b;
+    --menu-color-very-light: #FFFFFF;
+    --bg-color: #FFFFFF;
+    --text-color: #000000;
+    --text-color-light: #FFFFFF;
+    --text-color-highlight: #ef534f;
+    --text-color-true : green;
+    --text-color-false: red;
+    --hairline-color: #e3e3e3;
+    --footer-bg-color: #f5f5f5;
+}
+
+body {
+    color: var(--text-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.page-block {
+    padding: 0 1rem 0 1rem;
+    background-color: var(--menu-color);
+    width: 100%;
+}
+
+.page-block-content {
+    max-width: 100rem;
+    padding: 0 1rem 0 1rem;
+    margin: auto;
+}
+
+.page-block-button {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0 1rem 0;
+}
+
+/* header */
+
+.logo-main {
+    height: 100px;
+    width: 120px;
+    background-image: url("../img/japan.png");
+    background-size: cover;
+}
+
+.menu-main {
+    color: black;
+}
+
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+}
+
+.menu-main-item {
+    font-weight: 300;
+    text-decoration: none;
+    padding: 0 0.5rem;
+    color: var(--text-color);
+}
+
+.menu-main-item:hover {
+    color: var(--text-color-light);
+}
+
+/* menu */
+
+.hamburger-navigation label, #hamburger {
+    display: none;
+    color: var(--text-color);
+}
+
+@media screen and (max-width: 760px) {
+    .menu-main {
+        order: 1;
+        flex: 0;
+    }
+
+    .hamburger-navigation label {
+        display: inline-block;
+        font-size: 2rem;
+        padding: 0 1rem;
+    }
+
+    .hamburger-items {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+
+        width: 100%;
+        background-color: var(--menu-color-light);
+        /* border: 1px solid green; */
+    }
+
+    .hamburger-items a {
+        text-align: center;
+        padding: 1rem;
+        border-bottom: 1px solid var(--hairline-color);
+    }
+
+    .hamburger-navigation input:checked ~ .hamburger-items {
+        display: flex;
+    }
+}
+
+/* button */
+
+.button {
+    font-weight: 700;
+    text-decoration: none;
+    background-color: var(--menu-color);
+    border: 1px solid var(--menu-color);
+    color: var(--text-color-light);
+    padding: 0.6rem 1rem;
+    border-radius: 0.1rem;
+    transition: 200ms;
+}
+
+.button:hover {
+    background-color: var(--menu-color-light);
+}
+
+.button-primary {
+    background-color: var(--menu-color-very-light);
+    color: var(--text-color);
+}
+
+.button-primary:hover {
+    background-color: var(--menu-color-light);
+}
+
+
+/* hero */
+
+.hero-main {
+    text-align: center;
+}
+
+.hero-main-title {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.hero-main-subtitle {
+    margin-block-start: 0em;
+    font-size: 1rem;
+}
+
+
+/* sections */
+
+.playMenu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-gap: 1vh;
+}
+
+.playKana {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-gap: 1vh;
+}
+
+.playItemKana {
+    font-size: 5em;
+    color: var(--text-color-highlight);
+}
+
+.kanaToPlay {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.labelForKanaToPlay {
+    font-size: 1rem;
+    text-align: center;
+}
+
+
+/* lessons */
+.lessonKanas {
+    height: 1100px;
+    width: 700px;
+    background-image: url("../img/kanacomplete.png");
+    background-size: cover;
+}
+
+/* helpers */
+
+.bb {
+    border-bottom: 1px solid var(--hairline-color);
+}
+
+.mb {
+    margin-bottom: 3rem;
+}
+
+.mt {
+    margin-top: 2rem;
+}
+
+
+/* --------------- */
+/* legacy */
+/* --------------- */
+
+
+.resultPlayKana {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    min-height: 60px;
+    margin: 10px;
+    /* border: 1px solid black; */
+}
+
+.resultTrue {
+    color: var(--text-color-true);
+}
+
+.resultFalse {
+    color: var(--text-color-false);
+}
+
+.bigButton {
+    height: 100px;
+    width: 160px;
+}
+
+.veryBigButton {
+    height: 80px;
+    width: 250px;
+}
+
+.countdownTimer {
+    font-size: 2em;
+    color: #000000;
+    float: right;
+    /* border: 1px solid grey;     */
+}
+
+.info {
+    height: 12vh;
+    font-size: 22px;
+    /* border: 5px solid goldenrod; */
+}
+
+.reloadContinue {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-gap: 1vh;
+    /* border: 5px solid greenyellow; */
+}
+
+.reloadContinueItem {
+    align-content: center;
+}
+
+
+.playKana > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    height: 120px;
+    /* border: 1px solid black; */
+}
+
+.playKana > *:hover {
+    filter: brightness(90%);
+}
+
+.playKanaChoice {
+    align-content: center;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+}
+
+
+.playKanaChoiceItem {
+    font-size: 3em;
+}
+
+.alphabet {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-gap: 1vh;
+    font-size: 14px;
+    /* border: 5px solid greenyellow; */
+}
+
+.alphabet > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid grey; */
+}
+
+.alphabetImg {
+    width: 50%;
+}
+
+
+
