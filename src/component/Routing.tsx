@@ -1,19 +1,17 @@
 import React from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
-import {HomeHero} from "./Home/HomeHero";
 import {HomeMenu} from "./Home/HomeMenu";
+import {HomeHero} from "./Home/HomeHero";
 
 export const Routing = () => {
     return (
         <Router>
-            <Route path='/'>
-                <HomeMenu />
-                <HomeHero />
-            </Route>
-            <Route path='/practice'>
-                <div>toto</div>
-            </Route>
+            <Routes>
+                <Route path="/" element={<HomeMenu/>} />
+                <Route path="/hero" element={<HomeHero/>} />
+                <Route path="/practice" element={<div>practice</div>} />
+            </Routes>
         </Router>
     );
 };
