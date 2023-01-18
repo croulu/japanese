@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
 
-export const HomeHero = ({}) => {
+export const HomeHero = () => {
     const navigate = useNavigate();
 
     const handleEasyLevelClick = function () {
@@ -26,13 +26,13 @@ export const HomeHero = ({}) => {
                 <p className=" hero-main hero-main-subtitle">Bon, d'accord ce n'est pas facile, nous allons vous aider
                     ;)</p>
                 <div className="page-block-button">
-                    <a onClick={handleEasyLevelClick} className="button">Entrainement facile</a>
+                    <a href="/#" onClick={handleEasyLevelClick} className="button">Entrainement facile</a>
                 </div>
                 <div className="page-block-button">
-                    <a onClick={handleHardLevelClick} className="button">Entrainement difficile</a>
+                    <a href="/#" onClick={handleHardLevelClick} className="button">Entrainement difficile</a>
                 </div>
                 <div className="page-block-button">
-                    <a onClick={handleLessonClick} className="button button-primary">Voir la leçon</a>
+                    <a href="/#" onClick={handleLessonClick} className="button button-primary">Voir la leçon</a>
                 </div>
             </div>
         </>

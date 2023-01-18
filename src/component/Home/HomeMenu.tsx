@@ -23,7 +23,7 @@ export const HomeMenu = () => {
         <>
             <div className="page-block">
                 <header className="header-main">
-                    <a><div className="logo-main"></div></a>
+                    <div className="logo-main"></div>
 
                     <nav className="menu-main hamburger-navigation">
 
@@ -31,9 +31,9 @@ export const HomeMenu = () => {
                         <input type="checkbox" id="hamburger"/>
 
                         <div className="hamburger-items">
-                            <a className="menu-main-item" onClick={handleEasyLevelClick}>Entrainement facile</a>
-                            <a className="menu-main-item" onClick={handleHardLevelClick}>Entrainement difficile</a>
-                            <a className="menu-main-item" onClick={handleLessonClick}>Leçon</a>
+                            <a href="/#" className="menu-main-item" onClick={handleEasyLevelClick}>Entrainement facile</a>
+                            <a href="/#" className="menu-main-item" onClick={handleHardLevelClick}>Entrainement difficile</a>
+                            <a href="/#" className="menu-main-item" onClick={handleLessonClick}>Leçon</a>
                         </div>
                     </nav>
 
