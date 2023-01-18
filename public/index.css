@@ -41,7 +41,7 @@ body {
 .logo-main {
     height: 100px;
     width: 120px;
-    background-image: url("../img/japan.png");
+    background-image: url("src/img/japan.png");
     background-size: cover;
 }
 
