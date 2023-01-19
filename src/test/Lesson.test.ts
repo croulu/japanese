@@ -1,5 +1,6 @@
-import {Lesson, lessonCatalog, withId} from "../domain/Lesson";
+import {Lesson} from "../domain/Lesson";
 import {Syllable} from "../domain/Syllable";
+import {lessonFactory, withId} from "../domain/Lesson.factory";
 
 const syllables = [
     new Syllable('hiragana', 'k', 'ka'),
@@ -9,7 +10,7 @@ const syllables = [
     new Syllable('hiragana', 'k', 'ko'),
 ];
 const lesson:Lesson = new Lesson(syllables, 'ka ki ku ke ko', 1);
-const lessons:Array<Lesson> = lessonCatalog();
+const lessons:Array<Lesson> = lessonFactory();
 
 describe('Lesson', function () {
 
@@ -22,7 +23,7 @@ describe('Lesson', function () {
 
     it(`should provide lessons structured in alphabets`, function () {
         const sut = lessons;
-        const expected = 2;
+        const expected = 3;
 
         expect(sut.length).toBe(expected)
     });

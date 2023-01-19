@@ -14,26 +14,3 @@ export class Lesson {
     }
 
 }
-
-export const withId = (lesson:Lesson) => ({...lesson, id: lesson.title.split(" ").join("")});
-
-const syllablesLesson1 = [
-    new Syllable('hiragana', '', 'a'),
-    new Syllable('hiragana', '', 'i'),
-];
-const lesson1 = withId(new Lesson(syllablesLesson1, 'a i u e o', 1));
-
-const syllablesLesson2 = [
-    new Syllable('hiragana', 'k', 'ka'),
-    new Syllable('hiragana', 'k', 'ki'),
-];
-const lesson2 =  withId(new Lesson(syllablesLesson1, 'ka ki ku ke ko', 1));
-
-export function lessonCatalog():Array<Lesson> {
-    let lessons:Array<Lesson> = [];
-
-    lessons.push(lesson1);
-    lessons.push(lesson2);
-
-    return lessons;
-}
