@@ -8,8 +8,13 @@ export const Routing = () => {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<HomeMenu/>} />
-                <Route path="/hero" element={<HomeHero/>} />
+                <Route path="/" element={
+                    <>
+                        <HomeMenu/>
+                        <HomeHero/>
+                    </>
+                }
+                />
                 <Route path="/practice" element={<div>practice</div>} />
             </Routes>
         </Router>
