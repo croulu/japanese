@@ -1,6 +1,5 @@
 import {Syllable} from "../domain/Syllable";
 
-
 const syllable = new Syllable('hiragana', 'k', 'a');
 
 describe('Syllable', function () {

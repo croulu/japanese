@@ -11,7 +11,7 @@ export class Syllable {
         this.vowel = vowel;
     }
 
-    isTheSame(syllable:Syllable) {
+    isTheSame(syllable:Syllable):boolean {
         return (this.alphabet === syllable.alphabet &&
             this.consonant === syllable.consonant &&
             this.vowel === syllable.vowel )

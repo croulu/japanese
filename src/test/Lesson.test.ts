@@ -1,6 +1,6 @@
 import {Lesson} from "../domain/Lesson";
 import {Syllable} from "../domain/Syllable";
-import {lessonFactory, withId} from "../domain/Lesson.factory";
+import {groupLessonsInCatalog, withId} from "../domain/Syllable.factory";
 
 const syllables = [
     new Syllable('hiragana', 'k', 'ka'),
@@ -10,7 +10,7 @@ const syllables = [
     new Syllable('hiragana', 'k', 'ko'),
 ];
 const lesson:Lesson = new Lesson(syllables, 'ka ki ku ke ko', 1);
-const lessons:Array<Lesson> = lessonFactory();
+const lessons:Array<Lesson> = groupLessonsInCatalog();
 
 describe('Lesson', function () {
 
