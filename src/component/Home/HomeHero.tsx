@@ -19,6 +19,8 @@ export const HomeHero = () => {
         navigate('/practice');
     }
 
+    // const lessons:Array<Lesson> = groupLessonsInCatalog();
+
     return (
         <>
             <div className="page-block-content mt mb">

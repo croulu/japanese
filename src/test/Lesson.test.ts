@@ -1,6 +1,6 @@
 import {Lesson} from "../domain/Lesson";
 import {Syllable} from "../domain/Syllable";
-import {groupLessonsInCatalog, withId} from "../domain/Syllable.factory";
+import {groupLessonsInCatalog} from "../domain/Syllable.factory";
 
 const syllables = [
     new Syllable('hiragana', 'k', 'ka'),
@@ -15,7 +15,7 @@ const lessons:Array<Lesson> = groupLessonsInCatalog();
 describe('Lesson', function () {
 
     it(`should provide lesson with id`, function () {
-        const sut = withId(lesson).id;
+        const sut = lesson.id;
         const expected = 'kakikukeko';
 
         expect(sut).toBe(expected)

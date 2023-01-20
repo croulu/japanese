@@ -7,10 +7,14 @@ export class Lesson {
     order: number;
 
     constructor(syllables:Syllable[], title:string, order:number) {
-        this.id = "";
         this.syllables = syllables;
         this.title = title;
         this.order = order;
+        this.id = this.calculateId();
     }
+
+    calculateId () {
+        return this.id = this.title.split(" ").join("");
+    };
 
 }
