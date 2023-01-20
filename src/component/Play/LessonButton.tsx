@@ -5,10 +5,13 @@ import {SyllableKana} from "../../domain/SyllableKana";
 
 export const LessonButton = (props: { lesson: Lesson }) => {
     const { lesson } = props;
-    const oneKanaPerLesson = new SyllableKana(lesson.syllables[0].alphabet, lesson.syllables[0].consonant, lesson.syllables[0].vowel)
+    const oneKanaPerLesson = new SyllableKana(lesson.syllables[0].alphabet, lesson.syllables[0].consonant, lesson.syllables[0].vowel);
     return (
         <>
-            {oneKanaPerLesson.display()}
+            <div className="kanaToPlay">
+                {oneKanaPerLesson.display()}
+            </div>
+            <div className="labelForKanaToPlay">{lesson.title}</div>
         </>
     );
 };

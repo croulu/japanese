@@ -40,14 +40,16 @@ export const HomeHero  = (props: { lessons: Array<Lesson> }) => {
                     <a href="/#" onClick={handleLessonClick} className="button button-primary">Voir la leçon</a>
                 </div>
             </div>
-            <LessonComponent
-                key={"aaa"}
-                lessons={lessons}
-                ></LessonComponent>
-            <Alphabets
-                key={"aaa"}
-                lessons={lessons}
-                ></Alphabets>
+            <div id="playMenu" className="page-block-content">
+                <LessonComponent
+                    key={"aaa"}
+                    lessons={lessons}
+                    ></LessonComponent>
+                <Alphabets
+                    key={"aaa"}
+                    lessons={lessons}
+                    ></Alphabets>
+            </div>
         </>
     )
 };

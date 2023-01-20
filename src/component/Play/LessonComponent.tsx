@@ -6,13 +6,17 @@ import {LessonButton} from "./LessonButton";
 export const LessonComponent = (props: { lessons: Array<Lesson> }) => {
     const { lessons } = props;
     return (
-        <ul>
-            {
-                lessons.map((lesson) =>
-                    <div>{lesson.title} : <LessonButton
-                        key={"bbb"}
-                        lesson={lesson} /></div>
-                    )}
-        </ul>
+        <>
+            <div id="playMenu" className="page-block-content">
+                {
+                    lessons.map((lesson) =>
+                        <div><LessonButton
+                            key={"bbb"}
+                            lesson={lesson} />
+                        </div>
+                        )
+                }
+            </div>
+        </>
     );
 };

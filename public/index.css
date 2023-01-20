@@ -178,6 +178,11 @@ body {
     text-align: center;
 }
 
+.kanaInAlphabet {
+    font-size: 2rem;
+    text-align: left;
+}
+
 .labelForKanaToPlay {
     font-size: 1rem;
     text-align: center;
