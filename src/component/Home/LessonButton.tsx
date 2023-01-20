@@ -2,7 +2,7 @@ import React from "react";
 
 import {Lesson} from "../../domain/Lesson";
 import {SyllableKana} from "../../domain/SyllableKana";
-import {KanaComponent} from "./KanaComponent";
+import {SyllableComponent} from "./SyllableComponent";
 
 export const LessonButton = (props: { lesson: Lesson }) => {
     const { lesson } = props;
@@ -12,7 +12,7 @@ export const LessonButton = (props: { lesson: Lesson }) => {
         <>{oneKanaPerLesson.display()}
             {
                 syllables.map((syllable) =>
-                    <div> <KanaComponent
+                    <div> <SyllableComponent
                         key={"ccc"}
                         syllable={syllable} /></div>
                 )
