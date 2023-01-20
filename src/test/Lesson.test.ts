@@ -23,7 +23,7 @@ describe('Lesson', function () {
 
     it(`should provide lessons structured in alphabets`, function () {
         const sut = lessons;
-        const expected = 3;
+        const expected = 10;
 
         expect(sut.length).toBe(expected)
     });

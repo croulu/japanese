@@ -16,6 +16,37 @@ const syllableHSI:Syllable = new Syllable('hiragana', 's', 'i');
 const syllableHSU:Syllable = new Syllable('hiragana', 's', 'u');
 const syllableHSE:Syllable = new Syllable('hiragana', 's', 'e');
 const syllableHSO:Syllable = new Syllable('hiragana', 's', 'o');
+const syllableHTA:Syllable = new Syllable('hiragana', 't', 'a');
+const syllableHTI:Syllable = new Syllable('hiragana', 't', 'i');
+const syllableHTU:Syllable = new Syllable('hiragana', 't', 'u');
+const syllableHTE:Syllable = new Syllable('hiragana', 't', 'e');
+const syllableHTO:Syllable = new Syllable('hiragana', 't', 'o');
+const syllableHNA:Syllable = new Syllable('hiragana', 'n', 'a');
+const syllableHNI:Syllable = new Syllable('hiragana', 'n', 'i');
+const syllableHNU:Syllable = new Syllable('hiragana', 'n', 'u');
+const syllableHNE:Syllable = new Syllable('hiragana', 'n', 'e');
+const syllableHNO:Syllable = new Syllable('hiragana', 'n', 'o');
+const syllableHHA:Syllable = new Syllable('hiragana', 'h', 'a');
+const syllableHHI:Syllable = new Syllable('hiragana', 'h', 'i');
+const syllableHHU:Syllable = new Syllable('hiragana', 'h', 'u');
+const syllableHHE:Syllable = new Syllable('hiragana', 'h', 'e');
+const syllableHHO:Syllable = new Syllable('hiragana', 'h', 'o');
+const syllableHMA:Syllable = new Syllable('hiragana', 'm', 'a');
+const syllableHMI:Syllable = new Syllable('hiragana', 'm', 'i');
+const syllableHMU:Syllable = new Syllable('hiragana', 'm', 'u');
+const syllableHME:Syllable = new Syllable('hiragana', 'm', 'e');
+const syllableHMO:Syllable = new Syllable('hiragana', 'm', 'o');
+const syllableHYA:Syllable = new Syllable('hiragana', 'y', 'a');
+const syllableHYU:Syllable = new Syllable('hiragana', 'y', 'u');
+const syllableHYO:Syllable = new Syllable('hiragana', 'y', 'o');
+const syllableHRA:Syllable = new Syllable('hiragana', 'r', 'a');
+const syllableHRI:Syllable = new Syllable('hiragana', 'r', 'i');
+const syllableHRU:Syllable = new Syllable('hiragana', 'r', 'u');
+const syllableHRE:Syllable = new Syllable('hiragana', 'r', 'e');
+const syllableHRO:Syllable = new Syllable('hiragana', 'r', 'o');
+const syllableHWA:Syllable = new Syllable('hiragana', 'w', 'a');
+const syllableHWO:Syllable = new Syllable('hiragana', 'w', 'o');
+const syllableHN:Syllable = new Syllable('hiragana', 'n', '');
 
 const idH_A = syllableH_A.id;
 const idH_I = syllableH_I.id;
@@ -32,6 +63,37 @@ const idHSI = syllableHSI.id;
 const idHSU = syllableHSU.id;
 const idHSE = syllableHSE.id;
 const idHSO = syllableHSO.id;
+const idHTA = syllableHTA.id;
+const idHTI = syllableHTI.id;
+const idHTU = syllableHTU.id;
+const idHTE = syllableHTE.id;
+const idHTO = syllableHTO.id;
+const idHNA = syllableHNA.id;
+const idHNI = syllableHNI.id;
+const idHNU = syllableHNU.id;
+const idHNE = syllableHNE.id;
+const idHNO = syllableHNO.id;
+const idHHA = syllableHHA.id;
+const idHHI = syllableHHI.id;
+const idHHU = syllableHHU.id;
+const idHHE = syllableHHE.id;
+const idHHO = syllableHHO.id;
+const idHMA = syllableHMA.id;
+const idHMI = syllableHMI.id;
+const idHMU = syllableHMU.id;
+const idHME = syllableHME.id;
+const idHMO = syllableHMO.id;
+const idHYA = syllableHYA.id;
+const idHYU = syllableHYU.id;
+const idHYO = syllableHYO.id;
+const idHRA = syllableHRA.id;
+const idHRI = syllableHRI.id;
+const idHRU = syllableHRU.id;
+const idHRE = syllableHRE.id;
+const idHRO = syllableHRO.id;
+const idHWA = syllableHWA.id;
+const idHWO = syllableHWO.id;
+const idHN = syllableHN.id;
 
 export const syllableFactory = new Map();
 syllableFactory.set(idH_A, syllableH_A);
@@ -49,6 +111,37 @@ syllableFactory.set(idHSI, syllableHSI);
 syllableFactory.set(idHSU, syllableHSU);
 syllableFactory.set(idHSE, syllableHSE);
 syllableFactory.set(idHSO, syllableHSO);
+syllableFactory.set(idHTA, syllableHTA);
+syllableFactory.set(idHTI, syllableHTI);
+syllableFactory.set(idHTU, syllableHTU);
+syllableFactory.set(idHTE, syllableHTE);
+syllableFactory.set(idHTO, syllableHTO);
+syllableFactory.set(idHNA, syllableHNA);
+syllableFactory.set(idHNI, syllableHNI);
+syllableFactory.set(idHNU, syllableHNU);
+syllableFactory.set(idHNE, syllableHNE);
+syllableFactory.set(idHNO, syllableHNO);
+syllableFactory.set(idHHA, syllableHHA);
+syllableFactory.set(idHHI, syllableHHI);
+syllableFactory.set(idHHU, syllableHHU);
+syllableFactory.set(idHHE, syllableHHE);
+syllableFactory.set(idHHO, syllableHHO);
+syllableFactory.set(idHMA, syllableHMA);
+syllableFactory.set(idHMI, syllableHMI);
+syllableFactory.set(idHMU, syllableHMU);
+syllableFactory.set(idHME, syllableHME);
+syllableFactory.set(idHMO, syllableHMO);
+syllableFactory.set(idHYA, syllableHYA);
+syllableFactory.set(idHYU, syllableHYU);
+syllableFactory.set(idHYO, syllableHYO);
+syllableFactory.set(idHRA, syllableHRA);
+syllableFactory.set(idHRI, syllableHRI);
+syllableFactory.set(idHRU, syllableHRU);
+syllableFactory.set(idHRE, syllableHRE);
+syllableFactory.set(idHRO, syllableHRO);
+syllableFactory.set(idHWA, syllableHWA);
+syllableFactory.set(idHWO, syllableHWO);
+syllableFactory.set(idHN, syllableHN);
 
 export const romajiFactory = new Map();
 romajiFactory.set(idH_A, "a");
@@ -66,6 +159,37 @@ romajiFactory.set(idHSI, "shi");
 romajiFactory.set(idHSU, "su");
 romajiFactory.set(idHSE, "se");
 romajiFactory.set(idHSO, "so");
+romajiFactory.set(idHTA, "ta");
+romajiFactory.set(idHTI, "chi");
+romajiFactory.set(idHTU, "tsu");
+romajiFactory.set(idHTE, "te");
+romajiFactory.set(idHTO, "to");
+romajiFactory.set(idHNA, "na");
+romajiFactory.set(idHNI, "ni");
+romajiFactory.set(idHNU, "nu");
+romajiFactory.set(idHNE, "ne");
+romajiFactory.set(idHNO, "no");
+romajiFactory.set(idHHA, "ha");
+romajiFactory.set(idHHI, "hi");
+romajiFactory.set(idHHU, "fu");
+romajiFactory.set(idHHE, "he");
+romajiFactory.set(idHHO, "ho");
+romajiFactory.set(idHMA, "ma");
+romajiFactory.set(idHMI, "mi");
+romajiFactory.set(idHMU, "mu");
+romajiFactory.set(idHME, "me");
+romajiFactory.set(idHMO, "mo");
+romajiFactory.set(idHYA, "ya");
+romajiFactory.set(idHYU, "yu");
+romajiFactory.set(idHYO, "yo");
+romajiFactory.set(idHRA, "ra");
+romajiFactory.set(idHRI, "ri");
+romajiFactory.set(idHRU, "ru");
+romajiFactory.set(idHRE, "re");
+romajiFactory.set(idHRO, "ro");
+romajiFactory.set(idHWA, "wa");
+romajiFactory.set(idHWO, "wo");
+romajiFactory.set(idHN, "n");
 
 export const kanaFactory = new Map();
 kanaFactory.set(idH_A, "\u3042");
@@ -83,6 +207,40 @@ kanaFactory.set(idHSI, "\u3057");
 kanaFactory.set(idHSU, "\u3059");
 kanaFactory.set(idHSE, "\u305B");
 kanaFactory.set(idHSO, "\u305D");
+kanaFactory.set(idHTA, "\u305F");
+kanaFactory.set(idHTI, "\u3061");
+kanaFactory.set(idHTU, "\u3064");
+kanaFactory.set(idHTE, "\u3066");
+kanaFactory.set(idHTO, "\u3068");
+kanaFactory.set(idHNA, "\u306A");
+kanaFactory.set(idHNI, "\u306B");
+kanaFactory.set(idHNU, "\u306C");
+kanaFactory.set(idHNE, "\u306D");
+kanaFactory.set(idHNO, "\u306E");
+kanaFactory.set(idHHA, "\u306F");
+kanaFactory.set(idHHI, "\u3072");
+kanaFactory.set(idHHU, "\u3075");
+kanaFactory.set(idHHE, "\u3078");
+kanaFactory.set(idHHO, "\u307B");
+kanaFactory.set(idHMA, "\u307E");
+kanaFactory.set(idHMI, "\u307F");
+kanaFactory.set(idHMU, "\u3080");
+kanaFactory.set(idHME, "\u3081");
+kanaFactory.set(idHMO, "\u3082");
+kanaFactory.set(idHYA, "\u3084");
+kanaFactory.set(idHYU, "\u3086");
+kanaFactory.set(idHYO, "\u3088");
+kanaFactory.set(idHRA, "\u3089");
+kanaFactory.set(idHRI, "\u308A");
+kanaFactory.set(idHRU, "\u308B");
+kanaFactory.set(idHRE, "\u308C");
+kanaFactory.set(idHRO, "\u308D");
+kanaFactory.set(idHWA, "\u308F");
+kanaFactory.set(idHWO, "\u3092");
+kanaFactory.set(idHN, "\u3093");
+
+// TODO : vérifier les order pour les dakuten et handakuten
+// TODO : générer le title comme les romajis avec des espaces
 
 export function groupLessonsInCatalog():Array<Lesson> {
     let lessons:Array<Lesson>;
@@ -109,6 +267,51 @@ export function groupLessonsInCatalog():Array<Lesson> {
             syllableFactory.get(idHSE),
             syllableFactory.get(idHSO),
         ], 'sa shi su se so', 3),
+        new Lesson([
+            syllableFactory.get(idHTA),
+            syllableFactory.get(idHTI),
+            syllableFactory.get(idHTU),
+            syllableFactory.get(idHTE),
+            syllableFactory.get(idHTO),
+        ], 'ta chi tsu te to', 4),
+        new Lesson([
+            syllableFactory.get(idHNA),
+            syllableFactory.get(idHNI),
+            syllableFactory.get(idHNU),
+            syllableFactory.get(idHNE),
+            syllableFactory.get(idHNO),
+        ], 'na ni nu ne no', 5),
+        new Lesson([
+            syllableFactory.get(idHHA),
+            syllableFactory.get(idHHI),
+            syllableFactory.get(idHHU),
+            syllableFactory.get(idHHE),
+            syllableFactory.get(idHHO),
+        ], 'ha hi fu he ho', 6),
+        new Lesson([
+            syllableFactory.get(idHMA),
+            syllableFactory.get(idHMI),
+            syllableFactory.get(idHMU),
+            syllableFactory.get(idHME),
+            syllableFactory.get(idHMO),
+        ], 'ma mi mu me mo', 7),
+        new Lesson([
+            syllableFactory.get(idHYA),
+            syllableFactory.get(idHYU),
+            syllableFactory.get(idHYO),
+        ], 'ya mu mo', 8),
+        new Lesson([
+            syllableFactory.get(idHRA),
+            syllableFactory.get(idHRI),
+            syllableFactory.get(idHRU),
+            syllableFactory.get(idHRE),
+            syllableFactory.get(idHRO),
+        ], 'ra ri ru re ro', 9),
+        new Lesson([
+            syllableFactory.get(idHWA),
+            syllableFactory.get(idHWO),
+            syllableFactory.get(idHN),
+        ], 'wa wo n', 10),
     ];
 
     return lessons;
