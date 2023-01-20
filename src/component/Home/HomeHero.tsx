@@ -2,12 +2,11 @@ import React from "react";
 import { useNavigate } from 'react-router-dom';
 
 import {Lesson} from "../../domain/Lesson";
-import {groupLessonsInCatalog} from "../../domain/Syllable.factory";
-import {SyllableKana} from "../../domain/SyllableKana";
-import {SyllableRomaji} from "../../domain/SyllableRomaji";
-import {LessonComponent} from "./LessonComponent";
+import {LessonComponent} from "../Play/LessonComponent";
+import {Alphabets} from "../Learn/Alphabets";
 
-export const HomeHero = () => {
+export const HomeHero  = (props: { lessons: Array<Lesson> }) => {
+    const { lessons } = props;
     const navigate = useNavigate();
 
     const handleEasyLevelClick = function () {
@@ -22,22 +21,8 @@ export const HomeHero = () => {
     }
 
     const handleLessonClick = function () {
-        navigate('/practice');
+        navigate('/alphabets');
     }
-
-    const lessons:Array<Lesson> = groupLessonsInCatalog();
-    let kanas:Array<string> = [];
-    let romajis:Array<string> = [];
-
-    lessons.forEach(lesson =>
-        lesson.syllables.forEach(
-            syllable => {
-                //console.log(syllable.alphabet);
-                const syllableKana = new SyllableKana(syllable.alphabet, syllable.consonant, syllable.vowel)
-                const syllableRomaji = new SyllableRomaji(syllable.alphabet, syllable.consonant, syllable.vowel)
-                kanas.push(syllableKana.display());
-                romajis.push(syllableRomaji.display());
-            }))
 
     return (
         <>
@@ -59,6 +44,10 @@ export const HomeHero = () => {
                 key={"aaa"}
                 lessons={lessons}
                 ></LessonComponent>
+            <Alphabets
+                key={"aaa"}
+                lessons={lessons}
+                ></Alphabets>
         </>
     )
 };
