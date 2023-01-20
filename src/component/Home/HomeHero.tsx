@@ -5,6 +5,7 @@ import {Lesson} from "../../domain/Lesson";
 import {groupLessonsInCatalog} from "../../domain/Syllable.factory";
 import {SyllableKana} from "../../domain/SyllableKana";
 import {SyllableRomaji} from "../../domain/SyllableRomaji";
+import {LessonComponent} from "./LessonComponent";
 
 export const HomeHero = () => {
     const navigate = useNavigate();
@@ -54,12 +55,10 @@ export const HomeHero = () => {
                     <a href="/#" onClick={handleLessonClick} className="button button-primary">Voir la leçon</a>
                 </div>
             </div>
-            <div className=" hero-main hero-main-subtitle">
-                {kanas[0]}{kanas[1]}{kanas[2]}{kanas[3]}{kanas[4]}
-            </div>
-            <div className=" hero-main hero-main-subtitle">
-                {romajis[0]}{romajis[1]}{romajis[2]}{romajis[3]}{romajis[4]}
-            </div>
+            <LessonComponent
+                key={"aaa"}
+                lessons={lessons}
+                ></LessonComponent>
         </>
     )
 };
