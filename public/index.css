@@ -147,7 +147,7 @@ body {
 }
 
 .hero-main-subtitle {
-    margin-block-start: 0em;
+    margin-block-start: 0;
     font-size: 1rem;
 }
 
@@ -159,6 +159,14 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(1, 1fr);
     grid-gap: 1vh;
+}
+
+.alphabetMenu {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-gap: 1vh;
+    border: 1px solid darkgrey;
 }
 
 .playKana {
@@ -178,9 +186,14 @@ body {
     text-align: center;
 }
 
-.kanaInAlphabet {
+.kanaToLearn {
     font-size: 2rem;
-    text-align: left;
+    text-align: center;
+}
+
+.romajiToLearn {
+    font-size: 1rem;
+    text-align: center;
 }
 
 .labelForKanaToPlay {
@@ -193,7 +206,6 @@ body {
 .lessonKanas {
     height: 1100px;
     width: 700px;
-    background-image: url("../img/kanacomplete.png");
     background-size: cover;
 }
 

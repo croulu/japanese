@@ -45,6 +45,8 @@ export const HomeHero  = (props: { lessons: Array<Lesson> }) => {
                     key={"aaa"}
                     lessons={lessons}
                     ></LessonComponent>
+            </div>
+            <div className="page-block-content">
                 <Alphabets
                     key={"aaa"}
                     lessons={lessons}

@@ -2,18 +2,21 @@ import React from "react";
 
 import {Lesson} from "../../domain/Lesson";
 import {LessonButton} from "./LessonButton";
+import {Syllable} from "../../domain/Syllable";
 
 export const LessonComponent = (props: { lessons: Array<Lesson> }) => {
     const { lessons } = props;
+    const syllables:Syllable[] = lessons[0].syllables;
+    const alphabet:string = syllables[0].alphabet;
     return (
-        <>
-            <div id="playMenu" className="page-block-content">
+        <>{alphabet}
+            <div className="playMenu">
                 {
                     lessons.map((lesson) =>
-                        <div><LessonButton
+                        <LessonButton
                             key={"bbb"}
                             lesson={lesson} />
-                        </div>
+
                         )
                 }
             </div>

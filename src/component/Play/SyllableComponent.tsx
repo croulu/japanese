@@ -9,13 +9,13 @@ export const SyllableComponent = (props: { syllable: Syllable }) => {
     const oneKana = new SyllableKana(syllable.alphabet, syllable.consonant, syllable.vowel)
     const oneRomaji = new SyllableRomaji(syllable.alphabet, syllable.consonant, syllable.vowel)
     return (
-        <>
-            <div>
+        <div>
+            <div className="romajiToLearn">
                 {oneRomaji.display()}
             </div>
-            <div className="kanaInAlphabet">
+            <div className="kanaToLearn">
                 {oneKana.display()}
             </div>
-        </>
+        </div>
     );
 };

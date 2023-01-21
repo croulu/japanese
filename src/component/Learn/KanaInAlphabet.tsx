@@ -7,14 +7,14 @@ export const KanaInAlphabet = (props: { lesson: Lesson }) => {
     const { lesson } = props;
     const syllables = lesson.syllables;
     return (
-        <>
+        <div>
             {
                 syllables.map((syllable) =>
-                    <div> <SyllableComponent
+                    <SyllableComponent
                         key={"ccc"}
-                        syllable={syllable} /></div>
+                        syllable={syllable} />
                 )
             }
-        </>
+        </div>
     );
 };
