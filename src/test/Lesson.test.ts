@@ -5,6 +5,7 @@ import {Alphabet} from "../domain/Alphabet";
 
 const hiragana = new Alphabet("hiragana");
 
+const firstSyllable = new Syllable(hiragana, 'k', 'ka');
 const syllables = [
     new Syllable(hiragana, 'k', 'ka'),
     new Syllable(hiragana, 'k', 'ki'),
@@ -12,8 +13,10 @@ const syllables = [
     new Syllable(hiragana, 'k', 'ke'),
     new Syllable(hiragana, 'k', 'ko'),
 ];
+
 const lesson:Lesson = new Lesson(syllables, 'ka ki ku ke ko', 1);
-const lessons:Array<Lesson> = groupSyllablesInLessons();
+
+const lessons:Array<Lesson> = groupSyllablesInLessons(hiragana);
 
 describe('Lesson', function () {
 
@@ -26,9 +29,16 @@ describe('Lesson', function () {
 
     it(`should provide number of lessons`, function () {
         const sut = lessons;
-        const expected = 13;
+        const expected = 10;
 
         expect(sut.length).toBe(expected)
+    });
+
+    it(`should provide first syllable of lessons`, function () {
+        const sut = lesson.extractFirstSyllable();
+        const expected = firstSyllable;
+
+        expect(sut).toStrictEqual(expected)
     });
 
 });

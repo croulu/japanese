@@ -7,22 +7,15 @@ export const syllables:Array<Syllable> = [];
 const hiragana = new Alphabet('hiragana');
 const katakana = new Alphabet('katakana');
 
-export const alphabets:Array<Alphabet> = [];
-alphabets.push(hiragana);
-alphabets.push(katakana);
-
-export const syllablesInAlphabet = 10;
+export const allAlphabets:Array<Alphabet> = [];
+allAlphabets.push(hiragana);
+allAlphabets.push(katakana);
 
 const syllableH_A:Syllable = new Syllable(hiragana, '', 'a');
-syllables.push(syllableH_A);
 const syllableH_I:Syllable = new Syllable(hiragana, '', 'i');
-syllables.push(syllableH_I);
 const syllableH_U:Syllable = new Syllable(hiragana, '', 'u');
-syllables.push(syllableH_U);
 const syllableH_E:Syllable = new Syllable(hiragana, '', 'e');
-syllables.push(syllableH_E);
 const syllableH_O:Syllable = new Syllable(hiragana, '', 'o');
-syllables.push(syllableH_O);
 const syllableHKA:Syllable = new Syllable(hiragana, 'k', 'a');
 const syllableHKI:Syllable = new Syllable(hiragana, 'k', 'i');
 const syllableHKU:Syllable = new Syllable(hiragana, 'k', 'u');
@@ -80,6 +73,11 @@ const syllableKSI:Syllable = new Syllable(katakana, 's', 'i');
 const syllableKSU:Syllable = new Syllable(katakana, 's', 'u');
 const syllableKSE:Syllable = new Syllable(katakana, 's', 'e');
 const syllableKSO:Syllable = new Syllable(katakana, 's', 'o');
+const syllableKTA:Syllable = new Syllable(katakana, 't', 'a');
+const syllableKTI:Syllable = new Syllable(katakana, 't', 'i');
+const syllableKTU:Syllable = new Syllable(katakana, 't', 'u');
+const syllableKTE:Syllable = new Syllable(katakana, 't', 'e');
+const syllableKTO:Syllable = new Syllable(katakana, 't', 'o');
 
 export const idH_A = syllableH_A.id;
 export const idH_I = syllableH_I.id;
@@ -143,6 +141,11 @@ const idKSI = syllableKSI.id;
 const idKSU = syllableKSU.id;
 const idKSE = syllableKSE.id;
 const idKSO = syllableKSO.id;
+const idKTA = syllableKTA.id;
+const idKTI = syllableKTI.id;
+const idKTU = syllableKTU.id;
+const idKTE = syllableKTE.id;
+const idKTO = syllableKTO.id;
 
 export const syllableFactory = new Map();
 syllableFactory.set(idH_A, syllableH_A);
@@ -207,6 +210,11 @@ syllableFactory.set(idKSI, syllableKSI);
 syllableFactory.set(idKSU, syllableKSU);
 syllableFactory.set(idKSE, syllableKSE);
 syllableFactory.set(idKSO, syllableKSO);
+syllableFactory.set(idKTA, syllableKTA);
+syllableFactory.set(idKTI, syllableKTI);
+syllableFactory.set(idKTU, syllableKTU);
+syllableFactory.set(idKTE, syllableKTE);
+syllableFactory.set(idKTO, syllableKTO);
 
 export const romajiFactory = new Map();
 romajiFactory.set(idH_A, "a");
@@ -271,6 +279,11 @@ romajiFactory.set(idKSI, "shi");
 romajiFactory.set(idKSU, "su");
 romajiFactory.set(idKSE, "se");
 romajiFactory.set(idKSO, "so");
+romajiFactory.set(idKTA, "ta");
+romajiFactory.set(idKTI, "chi");
+romajiFactory.set(idKTU, "tsu");
+romajiFactory.set(idKTE, "te");
+romajiFactory.set(idKTO, "to");
 
 export const kanaFactory = new Map();
 kanaFactory.set(idH_A, "\u3042");
@@ -335,6 +348,11 @@ kanaFactory.set(idKSI, "\u30B7");
 kanaFactory.set(idKSU, "\u30B9");
 kanaFactory.set(idKSE, "\u30BB");
 kanaFactory.set(idKSO, "\u30BD");
+kanaFactory.set(idKTA, "\u30BF");
+kanaFactory.set(idKTI, "\u30C1");
+kanaFactory.set(idKTU, "\u30C4");
+kanaFactory.set(idKTE, "\u30C6");
+kanaFactory.set(idKTO, "\u30C8");
 
 // TODO : vérifier les order pour les dakuten et handakuten
 // TODO : générer le title comme les romajis avec des espaces
@@ -350,75 +368,76 @@ export function groupSyllablesInAlphabets():Array<Alphabet> {
     return alphabets;
 }
 
-export function groupSyllablesInLessons():Array<Lesson> {
+export function groupSyllablesInLessons(alphabet:Alphabet):Array<Lesson> {
     let lessons:Array<Lesson>;
 
     lessons = [
         new Lesson([
-            syllableFactory.get(idH_A),
-            syllableFactory.get(idH_I),
-            syllableFactory.get(idH_U),
-            syllableFactory.get(idH_E),
-            syllableFactory.get(idH_O),
+            new Syllable(alphabet, '', 'a'),
+            new Syllable(alphabet, '', 'i'),
+            new Syllable(alphabet, '', 'u'),
+            new Syllable(alphabet, '', 'e'),
+            new Syllable(alphabet, '', 'o'),
         ], 'a i u e o', 1),
         new Lesson([
-            syllableFactory.get(idHKA),
-            syllableFactory.get(idHKI),
-            syllableFactory.get(idHKU),
-            syllableFactory.get(idHKE),
-            syllableFactory.get(idHKO),
+            new Syllable(alphabet, 'k', 'a'),
+            new Syllable(alphabet, 'k', 'i'),
+            new Syllable(alphabet, 'k', 'u'),
+            new Syllable(alphabet, 'k', 'e'),
+            new Syllable(alphabet, 'k', 'o'),
         ], 'ka ki ku ke ko', 2),
         new Lesson([
-            syllableFactory.get(idHSA),
-            syllableFactory.get(idHSI),
-            syllableFactory.get(idHSU),
-            syllableFactory.get(idHSE),
-            syllableFactory.get(idHSO),
+            new Syllable(alphabet, 's', 'a'),
+            new Syllable(alphabet, 's', 'i'),
+            new Syllable(alphabet, 's', 'u'),
+            new Syllable(alphabet, 's', 'e'),
+            new Syllable(alphabet, 's', 'o'),
         ], 'sa shi su se so', 3),
         new Lesson([
-            syllableFactory.get(idHTA),
-            syllableFactory.get(idHTI),
-            syllableFactory.get(idHTU),
-            syllableFactory.get(idHTE),
-            syllableFactory.get(idHTO),
+            new Syllable(alphabet, 't', 'a'),
+            new Syllable(alphabet, 't', 'i'),
+            new Syllable(alphabet, 't', 'u'),
+            new Syllable(alphabet, 't', 'e'),
+            new Syllable(alphabet, 't', 'o'),
         ], 'ta chi tsu te to', 4),
         new Lesson([
-            syllableFactory.get(idHNA),
-            syllableFactory.get(idHNI),
-            syllableFactory.get(idHNU),
-            syllableFactory.get(idHNE),
-            syllableFactory.get(idHNO),
+            new Syllable(alphabet, 'n', 'a'),
+            new Syllable(alphabet, 'n', 'i'),
+            new Syllable(alphabet, 'n', 'u'),
+            new Syllable(alphabet, 'n', 'e'),
+            new Syllable(alphabet, 'n', 'o'),
         ], 'na ni nu ne no', 5),
         new Lesson([
-            syllableFactory.get(idHHA),
-            syllableFactory.get(idHHI),
-            syllableFactory.get(idHHU),
-            syllableFactory.get(idHHE),
-            syllableFactory.get(idHHO),
+            new Syllable(alphabet, 'h', 'a'),
+            new Syllable(alphabet, 'h', 'i'),
+            new Syllable(alphabet, 'h', 'u'),
+            new Syllable(alphabet, 'h', 'e'),
+            new Syllable(alphabet, 'h', 'o'),
         ], 'ha hi fu he ho', 6),
         new Lesson([
-            syllableFactory.get(idHMA),
-            syllableFactory.get(idHMI),
-            syllableFactory.get(idHMU),
-            syllableFactory.get(idHME),
-            syllableFactory.get(idHMO),
+            new Syllable(alphabet, 'm', 'a'),
+            new Syllable(alphabet, 'm', 'i'),
+            new Syllable(alphabet, 'm', 'u'),
+            new Syllable(alphabet, 'm', 'e'),
+            new Syllable(alphabet, 'm', 'o'),
+
         ], 'ma mi mu me mo', 7),
         new Lesson([
-            syllableFactory.get(idHYA),
-            syllableFactory.get(idHYU),
-            syllableFactory.get(idHYO),
+            new Syllable(alphabet, 'y', 'a'),
+            new Syllable(alphabet, 'y', 'u'),
+            new Syllable(alphabet, 'y', 'o'),
         ], 'ya mu mo', 8),
         new Lesson([
-            syllableFactory.get(idHRA),
-            syllableFactory.get(idHRI),
-            syllableFactory.get(idHRU),
-            syllableFactory.get(idHRE),
-            syllableFactory.get(idHRO),
+            new Syllable(alphabet, 'r', 'a'),
+            new Syllable(alphabet, 'r', 'i'),
+            new Syllable(alphabet, 'r', 'u'),
+            new Syllable(alphabet, 'r', 'e'),
+            new Syllable(alphabet, 'r', 'o'),
         ], 'ra ri ru re ro', 9),
         new Lesson([
-            syllableFactory.get(idHWA),
-            syllableFactory.get(idHWO),
-            syllableFactory.get(idHN),
+            new Syllable(alphabet, 'w', 'a'),
+            new Syllable(alphabet, 'w', 'o'),
+            new Syllable(alphabet, 'n', ''),
         ], 'wa wo n', 10),
     ];
 

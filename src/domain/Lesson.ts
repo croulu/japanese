@@ -1,5 +1,6 @@
 import {Syllable} from "./Syllable";
 import {Alphabet} from "./Alphabet";
+import {SyllableKana} from "./SyllableKana";
 
 export class Lesson {
     id: string;
@@ -20,6 +21,14 @@ export class Lesson {
 
     calculateId () {
         return this.id = this.title.split(" ").join("");
-    };
+    }
 
+    extractFirstSyllable():Syllable {
+        return new Syllable(this.syllables[0].alphabet, this.syllables[0].consonant, this.syllables[0].vowel);
+    }
+
+    extractFirstSyllableKana():SyllableKana {
+        const syllableExtracted:Syllable = this.extractFirstSyllable();
+        return new SyllableKana(syllableExtracted.alphabet, syllableExtracted.consonant, syllableExtracted.vowel);
+    }
 }

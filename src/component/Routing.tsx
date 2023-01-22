@@ -3,11 +3,11 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 import {Menu} from "./Home/Menu";
 import {Main} from "./Home/Main";
-import {groupSyllablesInAlphabets} from "../domain/Syllable.factory";
+import {allAlphabets} from "../domain/Syllable.factory";
 import {Alphabet} from "../domain/Alphabet";
 
 export const Routing = () => {
-    let  alphabets:Array<Alphabet> = groupSyllablesInAlphabets();
+    let  alphabets:Array<Alphabet> = allAlphabets;
 
     return (
         <Router>

@@ -3,11 +3,11 @@ import React from "react";
 import {Lesson} from "../../domain/Lesson";
 import {Alphabet} from "../../domain/Alphabet";
 import {LessonButton} from "./LessonButton";
-import {Syllable} from "../../domain/Syllable";
+import {groupSyllablesInLessons} from "../../domain/Syllable.factory";
 
 export const LessonsForAlphabetToPlay = (props: {  alphabet: Alphabet }) => {
     const { alphabet } = props;
-    let lessons:Array<Lesson> = alphabet.lessons;
+    let lessons:Array<Lesson> = groupSyllablesInLessons(alphabet);
 
     return (
         <>{alphabet.name}
