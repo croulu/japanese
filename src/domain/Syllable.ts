@@ -1,11 +1,13 @@
+import {Alphabet} from "./Alphabet";
+
 export class Syllable {
 
-    alphabet:string;
+    alphabet:Alphabet;
     consonant:string;
     vowel:string;
     id:string;
 
-    constructor (alphabet:string, consonant:string, vowel:string) {
+    constructor (alphabet:Alphabet, consonant:string, vowel:string) {
         this.alphabet = alphabet;
         this.consonant = consonant;
         this.vowel = vowel;

@@ -1,12 +1,13 @@
 import {Syllable} from "./Syllable";
 import {romajiFactory} from "./Syllable.factory";
+import {Alphabet} from "./Alphabet";
 
 export class SyllableRomaji extends Syllable {
 
     text:string;
     idSyllable:string;
 
-    constructor(alphabet:string, consonant:string, vowel:string) {
+    constructor(alphabet:Alphabet, consonant:string, vowel:string) {
         super(alphabet, consonant, vowel);
         this.idSyllable = super.calculateIdSyllable();
         this.text = this.findRomajiWithSyllableId();

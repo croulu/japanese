@@ -10,7 +10,7 @@ export const Alphabets = (props: { lessons: Array<Lesson> }) => {
             {
                 lessons.map((lesson) =>
                     <SyllablesInLesson
-                        key={"bbb"}
+                        key={"learn"+lesson.id}
                         lesson={lesson} />
                 )}
         </div>

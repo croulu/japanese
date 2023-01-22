@@ -1,16 +1,19 @@
 import {Lesson} from "../domain/Lesson";
 import {Syllable} from "../domain/Syllable";
-import {groupLessonsInCatalog} from "../domain/Syllable.factory";
+import {groupSyllablesInLessons} from "../domain/Syllable.factory";
+import {Alphabet} from "../domain/Alphabet";
+
+const hiragana = new Alphabet("hiragana");
 
 const syllables = [
-    new Syllable('hiragana', 'k', 'ka'),
-    new Syllable('hiragana', 'k', 'ki'),
-    new Syllable('hiragana', 'k', 'ku'),
-    new Syllable('hiragana', 'k', 'ke'),
-    new Syllable('hiragana', 'k', 'ko'),
+    new Syllable(hiragana, 'k', 'ka'),
+    new Syllable(hiragana, 'k', 'ki'),
+    new Syllable(hiragana, 'k', 'ku'),
+    new Syllable(hiragana, 'k', 'ke'),
+    new Syllable(hiragana, 'k', 'ko'),
 ];
 const lesson:Lesson = new Lesson(syllables, 'ka ki ku ke ko', 1);
-const lessons:Array<Lesson> = groupLessonsInCatalog();
+const lessons:Array<Lesson> = groupSyllablesInLessons();
 
 describe('Lesson', function () {
 

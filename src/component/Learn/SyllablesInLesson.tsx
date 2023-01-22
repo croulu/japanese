@@ -11,7 +11,7 @@ export const SyllablesInLesson = (props: { lesson: Lesson }) => {
             {
                 syllables.map((syllable) =>
                     <SyllableInAlphabet
-                        key={"ccc"}
+                        key={syllable.id}
                         syllable={syllable} />
                 )
             }

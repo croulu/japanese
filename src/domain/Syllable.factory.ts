@@ -2,6 +2,8 @@ import {Syllable} from "./Syllable";
 import {Lesson} from "./Lesson";
 import {Alphabet} from "./Alphabet";
 
+export const syllables:Array<Syllable> = [];
+
 const hiragana = new Alphabet('hiragana');
 const katakana = new Alphabet('katakana');
 
@@ -9,79 +11,86 @@ export const alphabets:Array<Alphabet> = [];
 alphabets.push(hiragana);
 alphabets.push(katakana);
 
-const syllableH_A:Syllable = new Syllable(hiragana.name, '', 'a');
-const syllableH_I:Syllable = new Syllable(hiragana.name, '', 'i');
-const syllableH_U:Syllable = new Syllable(hiragana.name, '', 'u');
-const syllableH_E:Syllable = new Syllable(hiragana.name, '', 'e');
-const syllableH_O:Syllable = new Syllable(hiragana.name, '', 'o');
-const syllableHKA:Syllable = new Syllable(hiragana.name, 'k', 'a');
-const syllableHKI:Syllable = new Syllable(hiragana.name, 'k', 'i');
-const syllableHKU:Syllable = new Syllable(hiragana.name, 'k', 'u');
-const syllableHKE:Syllable = new Syllable(hiragana.name, 'k', 'e');
-const syllableHKO:Syllable = new Syllable(hiragana.name, 'k', 'o');
-const syllableHSA:Syllable = new Syllable(hiragana.name, 's', 'a');
-const syllableHSI:Syllable = new Syllable(hiragana.name, 's', 'i');
-const syllableHSU:Syllable = new Syllable(hiragana.name, 's', 'u');
-const syllableHSE:Syllable = new Syllable(hiragana.name, 's', 'e');
-const syllableHSO:Syllable = new Syllable(hiragana.name, 's', 'o');
-const syllableHTA:Syllable = new Syllable(hiragana.name, 't', 'a');
-const syllableHTI:Syllable = new Syllable(hiragana.name, 't', 'i');
-const syllableHTU:Syllable = new Syllable(hiragana.name, 't', 'u');
-const syllableHTE:Syllable = new Syllable(hiragana.name, 't', 'e');
-const syllableHTO:Syllable = new Syllable(hiragana.name, 't', 'o');
-const syllableHNA:Syllable = new Syllable(hiragana.name, 'n', 'a');
-const syllableHNI:Syllable = new Syllable(hiragana.name, 'n', 'i');
-const syllableHNU:Syllable = new Syllable(hiragana.name, 'n', 'u');
-const syllableHNE:Syllable = new Syllable(hiragana.name, 'n', 'e');
-const syllableHNO:Syllable = new Syllable(hiragana.name, 'n', 'o');
-const syllableHHA:Syllable = new Syllable(hiragana.name, 'h', 'a');
-const syllableHHI:Syllable = new Syllable(hiragana.name, 'h', 'i');
-const syllableHHU:Syllable = new Syllable(hiragana.name, 'h', 'u');
-const syllableHHE:Syllable = new Syllable(hiragana.name, 'h', 'e');
-const syllableHHO:Syllable = new Syllable(hiragana.name, 'h', 'o');
-const syllableHMA:Syllable = new Syllable(hiragana.name, 'm', 'a');
-const syllableHMI:Syllable = new Syllable(hiragana.name, 'm', 'i');
-const syllableHMU:Syllable = new Syllable(hiragana.name, 'm', 'u');
-const syllableHME:Syllable = new Syllable(hiragana.name, 'm', 'e');
-const syllableHMO:Syllable = new Syllable(hiragana.name, 'm', 'o');
-const syllableHYA:Syllable = new Syllable(hiragana.name, 'y', 'a');
-const syllableHYU:Syllable = new Syllable(hiragana.name, 'y', 'u');
-const syllableHYO:Syllable = new Syllable(hiragana.name, 'y', 'o');
-const syllableHRA:Syllable = new Syllable(hiragana.name, 'r', 'a');
-const syllableHRI:Syllable = new Syllable(hiragana.name, 'r', 'i');
-const syllableHRU:Syllable = new Syllable(hiragana.name, 'r', 'u');
-const syllableHRE:Syllable = new Syllable(hiragana.name, 'r', 'e');
-const syllableHRO:Syllable = new Syllable(hiragana.name, 'r', 'o');
-const syllableHWA:Syllable = new Syllable(hiragana.name, 'w', 'a');
-const syllableHWO:Syllable = new Syllable(hiragana.name, 'w', 'o');
-const syllableHN:Syllable = new Syllable(hiragana.name, 'n', '');
+export const syllablesInAlphabet = 10;
 
-const syllableK_A:Syllable = new Syllable(katakana.name, '', 'a');
-const syllableK_I:Syllable = new Syllable(katakana.name, '', 'i');
-const syllableK_U:Syllable = new Syllable(katakana.name, '', 'u');
-const syllableK_E:Syllable = new Syllable(katakana.name, '', 'e');
-const syllableK_O:Syllable = new Syllable(katakana.name, '', 'o');
-const syllableKKA:Syllable = new Syllable(katakana.name, 'k', 'a');
-const syllableKKI:Syllable = new Syllable(katakana.name, 'k', 'i');
-const syllableKKU:Syllable = new Syllable(katakana.name, 'k', 'u');
-const syllableKKE:Syllable = new Syllable(katakana.name, 'k', 'e');
-const syllableKKO:Syllable = new Syllable(katakana.name, 'k', 'o');
-const syllableKSA:Syllable = new Syllable(katakana.name, 's', 'a');
-const syllableKSI:Syllable = new Syllable(katakana.name, 's', 'i');
-const syllableKSU:Syllable = new Syllable(katakana.name, 's', 'u');
-const syllableKSE:Syllable = new Syllable(katakana.name, 's', 'e');
-const syllableKSO:Syllable = new Syllable(katakana.name, 's', 'o');
+const syllableH_A:Syllable = new Syllable(hiragana, '', 'a');
+syllables.push(syllableH_A);
+const syllableH_I:Syllable = new Syllable(hiragana, '', 'i');
+syllables.push(syllableH_I);
+const syllableH_U:Syllable = new Syllable(hiragana, '', 'u');
+syllables.push(syllableH_U);
+const syllableH_E:Syllable = new Syllable(hiragana, '', 'e');
+syllables.push(syllableH_E);
+const syllableH_O:Syllable = new Syllable(hiragana, '', 'o');
+syllables.push(syllableH_O);
+const syllableHKA:Syllable = new Syllable(hiragana, 'k', 'a');
+const syllableHKI:Syllable = new Syllable(hiragana, 'k', 'i');
+const syllableHKU:Syllable = new Syllable(hiragana, 'k', 'u');
+const syllableHKE:Syllable = new Syllable(hiragana, 'k', 'e');
+const syllableHKO:Syllable = new Syllable(hiragana, 'k', 'o');
+const syllableHSA:Syllable = new Syllable(hiragana, 's', 'a');
+const syllableHSI:Syllable = new Syllable(hiragana, 's', 'i');
+const syllableHSU:Syllable = new Syllable(hiragana, 's', 'u');
+const syllableHSE:Syllable = new Syllable(hiragana, 's', 'e');
+const syllableHSO:Syllable = new Syllable(hiragana, 's', 'o');
+const syllableHTA:Syllable = new Syllable(hiragana, 't', 'a');
+const syllableHTI:Syllable = new Syllable(hiragana, 't', 'i');
+const syllableHTU:Syllable = new Syllable(hiragana, 't', 'u');
+const syllableHTE:Syllable = new Syllable(hiragana, 't', 'e');
+const syllableHTO:Syllable = new Syllable(hiragana, 't', 'o');
+const syllableHNA:Syllable = new Syllable(hiragana, 'n', 'a');
+const syllableHNI:Syllable = new Syllable(hiragana, 'n', 'i');
+const syllableHNU:Syllable = new Syllable(hiragana, 'n', 'u');
+const syllableHNE:Syllable = new Syllable(hiragana, 'n', 'e');
+const syllableHNO:Syllable = new Syllable(hiragana, 'n', 'o');
+const syllableHHA:Syllable = new Syllable(hiragana, 'h', 'a');
+const syllableHHI:Syllable = new Syllable(hiragana, 'h', 'i');
+const syllableHHU:Syllable = new Syllable(hiragana, 'h', 'u');
+const syllableHHE:Syllable = new Syllable(hiragana, 'h', 'e');
+const syllableHHO:Syllable = new Syllable(hiragana, 'h', 'o');
+const syllableHMA:Syllable = new Syllable(hiragana, 'm', 'a');
+const syllableHMI:Syllable = new Syllable(hiragana, 'm', 'i');
+const syllableHMU:Syllable = new Syllable(hiragana, 'm', 'u');
+const syllableHME:Syllable = new Syllable(hiragana, 'm', 'e');
+const syllableHMO:Syllable = new Syllable(hiragana, 'm', 'o');
+const syllableHYA:Syllable = new Syllable(hiragana, 'y', 'a');
+const syllableHYU:Syllable = new Syllable(hiragana, 'y', 'u');
+const syllableHYO:Syllable = new Syllable(hiragana, 'y', 'o');
+const syllableHRA:Syllable = new Syllable(hiragana, 'r', 'a');
+const syllableHRI:Syllable = new Syllable(hiragana, 'r', 'i');
+const syllableHRU:Syllable = new Syllable(hiragana, 'r', 'u');
+const syllableHRE:Syllable = new Syllable(hiragana, 'r', 'e');
+const syllableHRO:Syllable = new Syllable(hiragana, 'r', 'o');
+const syllableHWA:Syllable = new Syllable(hiragana, 'w', 'a');
+const syllableHWO:Syllable = new Syllable(hiragana, 'w', 'o');
+const syllableHN:Syllable = new Syllable(hiragana, 'n', '');
 
-const idH_A = syllableH_A.id;
-const idH_I = syllableH_I.id;
-const idH_U = syllableH_U.id;
-const idH_E = syllableH_E.id;
-const idH_O = syllableH_O.id;
-const idHKA = syllableHKA.id;
-const idHKI = syllableHKI.id;
-const idHKU = syllableHKU.id;
-const idHKE = syllableHKE.id;
-const idHKO = syllableHKO.id;
+const syllableK_A:Syllable = new Syllable(katakana, '', 'a');
+const syllableK_I:Syllable = new Syllable(katakana, '', 'i');
+const syllableK_U:Syllable = new Syllable(katakana, '', 'u');
+const syllableK_E:Syllable = new Syllable(katakana, '', 'e');
+const syllableK_O:Syllable = new Syllable(katakana, '', 'o');
+const syllableKKA:Syllable = new Syllable(katakana, 'k', 'a');
+const syllableKKI:Syllable = new Syllable(katakana, 'k', 'i');
+const syllableKKU:Syllable = new Syllable(katakana, 'k', 'u');
+const syllableKKE:Syllable = new Syllable(katakana, 'k', 'e');
+const syllableKKO:Syllable = new Syllable(katakana, 'k', 'o');
+const syllableKSA:Syllable = new Syllable(katakana, 's', 'a');
+const syllableKSI:Syllable = new Syllable(katakana, 's', 'i');
+const syllableKSU:Syllable = new Syllable(katakana, 's', 'u');
+const syllableKSE:Syllable = new Syllable(katakana, 's', 'e');
+const syllableKSO:Syllable = new Syllable(katakana, 's', 'o');
+
+export const idH_A = syllableH_A.id;
+export const idH_I = syllableH_I.id;
+export const idH_U = syllableH_U.id;
+export const idH_E = syllableH_E.id;
+export const idH_O = syllableH_O.id;
+export const idHKA = syllableHKA.id;
+export const idHKI = syllableHKI.id;
+export const idHKU = syllableHKU.id;
+export const idHKE = syllableHKE.id;
+export const idHKO = syllableHKO.id;
 const idHSA = syllableHSA.id;
 const idHSI = syllableHSI.id;
 const idHSU = syllableHSU.id;
@@ -330,7 +339,22 @@ kanaFactory.set(idKSO, "\u30BD");
 // TODO : vérifier les order pour les dakuten et handakuten
 // TODO : générer le title comme les romajis avec des espaces
 
-export function groupLessonsInCatalog():Array<Lesson> {
+export function groupSyllablesInAlphabets():Array<Alphabet> {
+    let alphabets:Array<Alphabet> = [];
+    /*
+    let alphabet:Alphabet;
+
+    alphabet.lessons.push(syllableH_A);
+    */
+    alphabets = [
+        new Alphabet("hiragana"),
+        new Alphabet("katakana"),
+    ];
+
+    return alphabets;
+}
+
+export function groupSyllablesInLessons():Array<Lesson> {
     let lessons:Array<Lesson>;
 
     lessons = [

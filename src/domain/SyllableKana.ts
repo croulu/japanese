@@ -1,12 +1,13 @@
 import {Syllable} from "./Syllable";
 import {kanaFactory} from "./Syllable.factory";
+import {Alphabet} from "./Alphabet";
 
 export class SyllableKana extends Syllable {
 
     unicode:string;
     idSyllable:string;
 
-    constructor(alphabet:string, consonant:string, vowel:string) {
+    constructor(alphabet:Alphabet, consonant:string, vowel:string) {
         super(alphabet, consonant, vowel);
         this.idSyllable = super.calculateIdSyllable();
         this.unicode = this.findKanaWithSyllableId();

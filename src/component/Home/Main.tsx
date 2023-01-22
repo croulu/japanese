@@ -2,10 +2,12 @@ import React from "react";
 import { useNavigate } from 'react-router-dom';
 
 import {Lesson} from "../../domain/Lesson";
-import {LessonsToPlay} from "../Play/LessonsToPlay";
 import {Alphabets} from "../Learn/Alphabets";
+import {AlphabetsToPlay} from "../Play/AlphabetsToPlay";
+import {Alphabet} from "../../domain/Alphabet";
 
-export const Main  = (props: { lessons: Array<Lesson> }) => {
+export const Main  = (props: { alphabets:Array<Alphabet>, lessons: Array<Lesson> }) => {
+    const { alphabets } = props;
     const { lessons } = props;
     const navigate = useNavigate();
 
@@ -41,17 +43,19 @@ export const Main  = (props: { lessons: Array<Lesson> }) => {
                 </div>
             </div>
             <div id="playMenu" className="page-block-content">
-                <LessonsToPlay
-                    key={"aaa"}
-                    lessons={lessons}
-                    ></LessonsToPlay>
-            </div>
-            <div className="page-block-content">
-                <Alphabets
-                    key={"aaa"}
-                    lessons={lessons}
-                    ></Alphabets>
+                <AlphabetsToPlay
+                    key={"aa1"}
+                    alphabets={alphabets}
+                    ></AlphabetsToPlay>
             </div>
         </>
     )
 };
+/*
+            <div className="page-block-content">
+                <Alphabets
+                    key={"aa2"}
+                    lessons={lessons}
+                    ></Alphabets>
+            </div>
+ */
