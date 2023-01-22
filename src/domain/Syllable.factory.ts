@@ -1,5 +1,13 @@
 import {Syllable} from "./Syllable";
 import {Lesson} from "./Lesson";
+import {Alphabet} from "./Alphabet";
+
+const hiragana = new Alphabet('hiragana', 1);
+const katakana = new Alphabet('katakana', 2);
+
+export const alphabets:Array<Alphabet> = [];
+alphabets.push(hiragana);
+alphabets.push(katakana);
 
 const syllableH_A:Syllable = new Syllable('hiragana', '', 'a');
 const syllableH_I:Syllable = new Syllable('hiragana', '', 'i');

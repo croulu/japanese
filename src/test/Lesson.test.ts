@@ -21,9 +21,9 @@ describe('Lesson', function () {
         expect(sut).toBe(expected)
     });
 
-    it(`should provide lessons structured in alphabets`, function () {
+    it(`should provide number of lessons`, function () {
         const sut = lessons;
-        const expected = 10;
+        const expected = 13;
 
         expect(sut.length).toBe(expected)
     });
