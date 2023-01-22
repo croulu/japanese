@@ -6,8 +6,6 @@ import {SyllableKana} from "../../domain/SyllableKana";
 export const LessonButton = (props: { lesson: Lesson }) => {
     const { lesson } = props;
     const oneKanaPerLesson = new SyllableKana(lesson.syllables[0].alphabet, lesson.syllables[0].consonant, lesson.syllables[0].vowel);
-    const syllables = lesson.syllables;
-    console.log(syllables);
     return (
         <div>
             <div className="kanaToPlay">

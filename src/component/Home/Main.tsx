@@ -1,14 +1,11 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
 
-import {Lesson} from "../../domain/Lesson";
-import {Alphabets} from "../Learn/Alphabets";
 import {AlphabetsToPlay} from "../Play/AlphabetsToPlay";
 import {Alphabet} from "../../domain/Alphabet";
 
-export const Main  = (props: { alphabets:Array<Alphabet>, lessons: Array<Lesson> }) => {
+export const Main  = (props: { alphabets:Array<Alphabet> }) => {
     const { alphabets } = props;
-    const { lessons } = props;
     const navigate = useNavigate();
 
     const handleEasyLevelClick = function () {

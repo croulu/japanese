@@ -341,11 +341,7 @@ kanaFactory.set(idKSO, "\u30BD");
 
 export function groupSyllablesInAlphabets():Array<Alphabet> {
     let alphabets:Array<Alphabet> = [];
-    /*
-    let alphabet:Alphabet;
 
-    alphabet.lessons.push(syllableH_A);
-    */
     alphabets = [
         new Alphabet("hiragana"),
         new Alphabet("katakana"),
@@ -424,27 +420,6 @@ export function groupSyllablesInLessons():Array<Lesson> {
             syllableFactory.get(idHWO),
             syllableFactory.get(idHN),
         ], 'wa wo n', 10),
-        new Lesson([
-            syllableFactory.get(idK_A),
-            syllableFactory.get(idK_I),
-            syllableFactory.get(idK_U),
-            syllableFactory.get(idK_E),
-            syllableFactory.get(idK_O),
-        ], 'a i u e o', 11),
-        new Lesson([
-            syllableFactory.get(idKKA),
-            syllableFactory.get(idKKI),
-            syllableFactory.get(idKKU),
-            syllableFactory.get(idKKE),
-            syllableFactory.get(idKKO),
-        ], 'ka ki ku ke ko', 12),
-        new Lesson([
-            syllableFactory.get(idKSA),
-            syllableFactory.get(idKSI),
-            syllableFactory.get(idKSU),
-            syllableFactory.get(idKSE),
-            syllableFactory.get(idKSO),
-        ], 'sa shi su se so', 13),
     ];
 
     return lessons;
