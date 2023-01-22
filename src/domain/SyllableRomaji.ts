@@ -1,5 +1,5 @@
 import {Syllable} from "./Syllable";
-import {romajiFactory} from "./Syllable.factory";
+import {mappingSyllableKanaRomaji} from "./Syllable.factory";
 import {Alphabet} from "./Alphabet";
 
 export class SyllableRomaji extends Syllable {
@@ -10,21 +10,20 @@ export class SyllableRomaji extends Syllable {
     constructor(alphabet:Alphabet, consonant:string, vowel:string) {
         super(alphabet, consonant, vowel);
         this.idSyllable = super.calculateIdSyllable();
-        this.text = this.findRomajiWithSyllableId();
+        this.text = this.findWithSyllableId();
     }
 
     display():string {
         return this.text;
     }
 
-    findRomajiWithSyllableId():string {
-        let romaji:string;
-        const isFound:boolean = romajiFactory.has(this.idSyllable);
-        if (isFound)
-            romaji = romajiFactory.get(this.idSyllable);
-        else
-            romaji = "";
-        return romaji;
+    findWithSyllableId():string {
+        const romajiFound:string[]|undefined = mappingSyllableKanaRomaji.find(element => element[0] === this.idSyllable);
+        let kana: string = "";
+        if (romajiFound) {
+            kana = romajiFound[2];
+        }
+        return kana;
     }
 
 }

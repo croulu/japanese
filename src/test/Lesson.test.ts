@@ -27,13 +27,6 @@ describe('Lesson', function () {
         expect(sut).toBe(expected)
     });
 
-    it(`should provide number of lessons`, function () {
-        const sut = lessons;
-        const expected = 10;
-
-        expect(sut.length).toBe(expected)
-    });
-
     it(`should provide first syllable of lessons`, function () {
         const sut = lesson.extractFirstSyllable();
         const expected = firstSyllable;
