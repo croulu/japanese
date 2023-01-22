@@ -15,13 +15,13 @@ export class Syllable {
     }
 
     isTheSame(syllable:Syllable):boolean {
-        return (this.alphabet === syllable.alphabet &&
+        return (this.alphabet.name === syllable.alphabet.name &&
             this.consonant === syllable.consonant &&
             this.vowel === syllable.vowel )
     }
 
     calculateIdSyllable():string {
-        return (this.alphabet + this.consonant + this.vowel)
+        return (this.alphabet.name + this.consonant + this.vowel)
     };
 
 }
