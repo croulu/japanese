@@ -1,10 +1,8 @@
 export class Alphabet {
     name:string;
-    order: number;
 
-    constructor(name:string, order:number) {
+    constructor(name:string) {
         this.name = name;
-        this.order = order;
     }
 
 }
