@@ -1,7 +1,7 @@
 import React from "react";
 
 import {Lesson} from "../../domain/Lesson";
-import {SyllableComponent} from "../Play/SyllableComponent";
+import {LessonToPlay} from "../Play/LessonToPlay";
 
 export const KanaInAlphabet = (props: { lesson: Lesson }) => {
     const { lesson } = props;
@@ -10,7 +10,7 @@ export const KanaInAlphabet = (props: { lesson: Lesson }) => {
         <div>
             {
                 syllables.map((syllable) =>
-                    <SyllableComponent
+                    <LessonToPlay
                         key={"ccc"}
                         syllable={syllable} />
                 )

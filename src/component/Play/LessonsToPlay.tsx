@@ -4,7 +4,7 @@ import {Lesson} from "../../domain/Lesson";
 import {LessonButton} from "./LessonButton";
 import {Syllable} from "../../domain/Syllable";
 
-export const LessonComponent = (props: { lessons: Array<Lesson> }) => {
+export const LessonsToPlay = (props: { lessons: Array<Lesson> }) => {
     const { lessons } = props;
     const syllables:Syllable[] = lessons[0].syllables;
     const alphabet:string = syllables[0].alphabet;

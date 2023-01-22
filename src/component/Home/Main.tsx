@@ -2,10 +2,10 @@ import React from "react";
 import { useNavigate } from 'react-router-dom';
 
 import {Lesson} from "../../domain/Lesson";
-import {LessonComponent} from "../Play/LessonComponent";
+import {LessonsToPlay} from "../Play/LessonsToPlay";
 import {Alphabets} from "../Learn/Alphabets";
 
-export const HomeHero  = (props: { lessons: Array<Lesson> }) => {
+export const Main  = (props: { lessons: Array<Lesson> }) => {
     const { lessons } = props;
     const navigate = useNavigate();
 
@@ -27,8 +27,8 @@ export const HomeHero  = (props: { lessons: Array<Lesson> }) => {
     return (
         <>
             <div className="page-block-content mt mb">
-                <h1 className=" hero-main hero-main-title">Apprenez vos kanas !</h1>
-                <p className=" hero-main hero-main-subtitle">Bon, d'accord ce n'est pas facile, nous allons vous aider
+                <h1 className=" main main-title">Apprenez vos kanas !</h1>
+                <p className=" main main-subtitle">Bon, d'accord ce n'est pas facile, nous allons vous aider
                     ;)</p>
                 <div className="page-block-button">
                     <a href="/#" onClick={handleEasyLevelClick} className="button">Entrainement facile</a>
@@ -41,10 +41,10 @@ export const HomeHero  = (props: { lessons: Array<Lesson> }) => {
                 </div>
             </div>
             <div id="playMenu" className="page-block-content">
-                <LessonComponent
+                <LessonsToPlay
                     key={"aaa"}
                     lessons={lessons}
-                    ></LessonComponent>
+                    ></LessonsToPlay>
             </div>
             <div className="page-block-content">
                 <Alphabets

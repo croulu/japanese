@@ -135,18 +135,18 @@ body {
 }
 
 
-/* hero */
+/* main */
 
-.hero-main {
+.main {
     text-align: center;
 }
 
-.hero-main-title {
+.main-title {
     font-size: 2rem;
     font-weight: 500;
 }
 
-.hero-main-subtitle {
+.main-subtitle {
     margin-block-start: 0;
     font-size: 1rem;
 }

@@ -1,8 +1,8 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
-import {HomeMenu} from "./Home/HomeMenu";
-import {HomeHero} from "./Home/HomeHero";
+import {Menu} from "./Home/Menu";
+import {Main} from "./Home/Main";
 import {Alphabets} from "./Learn/Alphabets";
 import {Lesson} from "../domain/Lesson";
 import {groupLessonsInCatalog} from "../domain/Syllable.factory";
@@ -29,8 +29,8 @@ export const Routing = () => {
             <Routes>
                 <Route path="/" element={
                     <>
-                        <HomeMenu/>
-                        <HomeHero
+                        <Menu/>
+                        <Main
                             key={"qqq"}
                             lessons={lessons} />
                     </>
