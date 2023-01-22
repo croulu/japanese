@@ -1,7 +1,7 @@
 import React from "react";
 
 import {Lesson} from "../../domain/Lesson";
-import {KanaInAlphabet} from "./KanaInAlphabet";
+import {SyllablesInLesson} from "./SyllablesInLesson";
 
 export const Alphabets = (props: { lessons: Array<Lesson> }) => {
     const { lessons } = props;
@@ -9,7 +9,7 @@ export const Alphabets = (props: { lessons: Array<Lesson> }) => {
         <div className="alphabetMenu">
             {
                 lessons.map((lesson) =>
-                    <KanaInAlphabet
+                    <SyllablesInLesson
                         key={"bbb"}
                         lesson={lesson} />
                 )}

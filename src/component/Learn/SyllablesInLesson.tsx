@@ -1,16 +1,16 @@
 import React from "react";
 
 import {Lesson} from "../../domain/Lesson";
-import {LessonToPlay} from "../Play/LessonToPlay";
+import {SyllableInAlphabet} from "./SyllableInAlphabet";
 
-export const KanaInAlphabet = (props: { lesson: Lesson }) => {
+export const SyllablesInLesson = (props: { lesson: Lesson }) => {
     const { lesson } = props;
     const syllables = lesson.syllables;
     return (
         <div>
             {
                 syllables.map((syllable) =>
-                    <LessonToPlay
+                    <SyllableInAlphabet
                         key={"ccc"}
                         syllable={syllable} />
                 )
