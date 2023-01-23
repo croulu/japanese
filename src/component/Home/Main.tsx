@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
 
-import {AlphabetsToPlay} from "../Play/AlphabetsToPlay";
+import {AlphabetsToPlay} from "../PlayMenu/AlphabetsToPlay";
 import {Alphabet} from "../../domain/Alphabet";
 
 export const Main  = (props: { alphabets:Array<Alphabet> }) => {

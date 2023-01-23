@@ -6,10 +6,23 @@ import {Main} from "./Home/Main";
 import {allAlphabets} from "../domain/Syllable.factory";
 import {Alphabet} from "../domain/Alphabet";
 import {AlphabetsToLearn} from "./Learn/AlphabetsToLearn";
-import {AlphabetsToPlay} from "./Play/AlphabetsToPlay";
+import {AlphabetsToPlay} from "./PlayMenu/AlphabetsToPlay";
+import {PlayItem} from "./PlayItem/PlayItem";
+import {Lesson} from "../domain/Lesson";
+import {Syllable} from "../domain/Syllable";
 
 export const Routing = () => {
     let  alphabets:Array<Alphabet> = allAlphabets;
+
+    const alphabetForTest:Alphabet = new Alphabet("hiragana");
+    const lessonForTest:Lesson = new Lesson([
+            new Syllable(alphabetForTest, 's', 'a'),
+            new Syllable(alphabetForTest, 's', 'i'),
+            new Syllable(alphabetForTest, 's', 'u'),
+            new Syllable(alphabetForTest, 's', 'e'),
+            new Syllable(alphabetForTest, 's', 'o'),
+        ], 'sa shi su se so', 3);
+    const levelForTest:string = "facile";
 
     return (
         <Router>
@@ -30,6 +43,16 @@ export const Routing = () => {
                             key={"alphabetsToPlay"}
                             alphabets={alphabets}
                         ></AlphabetsToPlay>
+                    </>
+                } />
+                <Route path="/play" element={
+                    <>
+                        <Menu />
+                        <PlayItem
+                            key={"lessonToPlay"}
+                            lesson={lessonForTest}
+                            level={levelForTest}
+                        ></PlayItem>
                     </>
                 } />
                 <Route path="/alphabets" element={

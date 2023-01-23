@@ -17,6 +17,9 @@ const syllables = [
 
 const lesson:Lesson = new Lesson(syllables, 'ka ki ku ke ko', 1);
 
+// TODO tester tous les cas particuliers
+// TODO aujouter un test sur les romajis identhiques (cas de "ji")
+
 describe('SyllableKana', function () {
     it(`should display kana`, function () {
         const sut = kanaHiraganaKa.display();
