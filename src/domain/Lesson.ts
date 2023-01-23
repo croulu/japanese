@@ -35,7 +35,7 @@ export class Lesson {
 
     completeSyllablesForDifficultLesson():Array<Syllable> {
         let syllablesDifficult:Array<Syllable> = [];
-        let lessonsIncludedInThisDifficult:Array<Lesson> = [];
+        let lessonsIncludedInThisDifficult:Array<Lesson>;
 
         const lessons:Array<Lesson> = groupSyllablesInLessons(this.alphabet);
 

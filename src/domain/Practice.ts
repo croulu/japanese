@@ -21,9 +21,7 @@ export class Practice {
     }
 
     next():GuessSyllable {
-        const guessSyllable:GuessSyllable = new GuessSyllable(this.syllablesOneSet);
-
-        return guessSyllable;
+        return new GuessSyllable(this.syllablesOneSet);
     }
 
 

@@ -45,16 +45,14 @@ describe('Lesson', function () {
 
     it(`should provide first syllable of lessons`, function () {
         const sut = lesson.extractFirstSyllable();
-        const expected = firstSyllable;
 
-        expect(sut).toStrictEqual(expected)
+        expect(sut).toStrictEqual(firstSyllable);
     });
 
     it('should provide syllables for a level difficult', function () {
         const sut = lessonDifficult.completeSyllablesForDifficultLesson();
-        const expected = syllablesDifficult;
 
-        expect(sut).toStrictEqual(expected)
+        expect(sut).toStrictEqual(syllablesDifficult);
     });
 
 });

@@ -30,34 +30,25 @@ export const Routing = () => {
                 <Route path="/" element={
                     <>
                         <Menu />
-                        <Main key={"main"}
-                        />
+                        <Main key={"main"} />
                     </>
                 } />
                 <Route path="/practice" element={
                     <>
                         <Menu />
-                        <AlphabetsToPlay
-                            key={"alphabetsToPlay"}
-                            alphabets={alphabets}
-                        ></AlphabetsToPlay>
+                        <AlphabetsToPlay key={"alphabetsToPlay"} alphabets={alphabets} />
                     </>
                 } />
                 <Route path="/play" element={
                     <>
                         <Menu />
-                        <PlayItemStart
-                            key={"lessonToPlay"}
-                            lesson={lessonForTest}
-                            level={levelForTest}
-                        ></PlayItemStart>
+                        <PlayItemStart key={"lessonToPlay"} lesson={lessonForTest} level={levelForTest} />
                     </>
                 } />
                 <Route path="/alphabets" element={
                     <>
                         <Menu />
-                        <AlphabetsToLearn key={"alphabetsToLearn"}
-                                          alphabets={alphabets} />
+                        <AlphabetsToLearn key={"alphabetsToLearn"} alphabets={alphabets} />
                     </>
                 } />
             </Routes>
