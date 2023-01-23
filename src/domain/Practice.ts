@@ -1,4 +1,5 @@
 import {Syllable} from "./Syllable";
+import {randomizeSyllables} from "./randomizeSyllables";
 
 const MAX_SYLLABLES_TO_PROPOZE:number = 5;
 
@@ -13,9 +14,9 @@ export class Practice {
     }
 
     createPractice():Array<Syllable> {
-        const syllables:Array<Syllable> = this.syllablesWholeSet.slice(0, MAX_SYLLABLES_TO_PROPOZE);
-        console.log(syllables);
-        return syllables;
+        const syllablesWholeSetRandomized:Array<Syllable> = randomizeSyllables(this.syllablesWholeSet);
+
+        return syllablesWholeSetRandomized.slice(0, MAX_SYLLABLES_TO_PROPOZE);
     }
 
 

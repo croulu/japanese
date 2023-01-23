@@ -32,7 +32,4 @@ export class Lesson {
         return new SyllableKana(syllableExtracted.alphabet, syllableExtracted.consonant, syllableExtracted.vowel);
     }
 
-    getSyllables():Array<Syllable> {
-        return this.syllables;
-    }
 }
