@@ -1,22 +1,38 @@
 import {Lesson} from "../domain/Lesson";
 import {Syllable} from "../domain/Syllable";
-import {groupSyllablesInLessons} from "../domain/Syllable.factory";
 import {Alphabet} from "../domain/Alphabet";
 
 const hiragana = new Alphabet("hiragana");
 
-const firstSyllable = new Syllable(hiragana, 'k', 'ka');
+const firstSyllable = new Syllable(hiragana, 'k', 'a');
 const syllables = [
-    new Syllable(hiragana, 'k', 'ka'),
-    new Syllable(hiragana, 'k', 'ki'),
-    new Syllable(hiragana, 'k', 'ku'),
-    new Syllable(hiragana, 'k', 'ke'),
-    new Syllable(hiragana, 'k', 'ko'),
+    new Syllable(hiragana, 'k', 'a'),
+    new Syllable(hiragana, 'k', 'i'),
+    new Syllable(hiragana, 'k', 'u'),
+    new Syllable(hiragana, 'k', 'e'),
+    new Syllable(hiragana, 'k', 'o'),
 ];
 
-const lesson:Lesson = new Lesson(syllables, 'ka ki ku ke ko', 1);
+const lesson:Lesson = new Lesson(syllables, 'ka ki ku ke ko', 2);
 
-const lessons:Array<Lesson> = groupSyllablesInLessons(hiragana);
+const lessonDifficult:Lesson = new Lesson(syllables, 'sa shi su se so', 3);
+const syllablesDifficult = [
+    new Syllable(hiragana, '', 'a'),
+    new Syllable(hiragana, '', 'i'),
+    new Syllable(hiragana, '', 'u'),
+    new Syllable(hiragana, '', 'e'),
+    new Syllable(hiragana, '', 'o'),
+    new Syllable(hiragana, 'k', 'a'),
+    new Syllable(hiragana, 'k', 'i'),
+    new Syllable(hiragana, 'k', 'u'),
+    new Syllable(hiragana, 'k', 'e'),
+    new Syllable(hiragana, 'k', 'o'),
+    new Syllable(hiragana, 's', 'a'),
+    new Syllable(hiragana, 's', 'i'),
+    new Syllable(hiragana, 's', 'u'),
+    new Syllable(hiragana, 's', 'e'),
+    new Syllable(hiragana, 's', 'o'),
+];
 
 describe('Lesson', function () {
 
@@ -30,6 +46,13 @@ describe('Lesson', function () {
     it(`should provide first syllable of lessons`, function () {
         const sut = lesson.extractFirstSyllable();
         const expected = firstSyllable;
+
+        expect(sut).toStrictEqual(expected)
+    });
+
+    it('should provide syllables for a level difficult', function () {
+        const sut = lessonDifficult.completeSyllablesForDifficultLesson();
+        const expected = syllablesDifficult;
 
         expect(sut).toStrictEqual(expected)
     });

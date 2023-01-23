@@ -16,13 +16,13 @@ export const Routing = () => {
 
     const alphabetForTest:Alphabet = new Alphabet("hiragana");
     const lessonForTest:Lesson = new Lesson([
-            new Syllable(alphabetForTest, 's', 'a'),
-            new Syllable(alphabetForTest, 's', 'i'),
-            new Syllable(alphabetForTest, 's', 'u'),
-            new Syllable(alphabetForTest, 's', 'e'),
-            new Syllable(alphabetForTest, 's', 'o'),
-        ], 'sa shi su se so', 3);
-    const levelForTest:string = "facile";
+            new Syllable(alphabetForTest, 't', 'a'),
+            new Syllable(alphabetForTest, 't', 'i'),
+            new Syllable(alphabetForTest, 't', 'u'),
+            new Syllable(alphabetForTest, 't', 'e'),
+            new Syllable(alphabetForTest, 't', 'o'),
+        ], 'ta chi tsu te to', 4);
+    const levelForTest:string = "difficult";
 
     return (
         <Router>
@@ -30,9 +30,7 @@ export const Routing = () => {
                 <Route path="/" element={
                     <>
                         <Menu />
-                        <Main
-                            key={"qqq"}
-                            alphabets={alphabets}
+                        <Main key={"main"}
                         />
                     </>
                 } />

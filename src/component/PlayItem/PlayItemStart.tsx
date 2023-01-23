@@ -9,8 +9,8 @@ import {GuessSyllable} from "../../domain/GuessSyllable";
 export const PlayItemStart = (props: { lesson: Lesson, level:string }) => {
     const { lesson, level } = props;
 
-    const syllables:Array<Syllable> = lesson.syllables;
-    // TODO selon level la leçon peut être plus grosse (cad contenir les precedentes)
+    let syllables:Array<Syllable> = [];
+    level === "easy" ? syllables = lesson.syllables : syllables = lesson.completeSyllablesForDifficultLesson();
 
     const practice:Practice = new Practice(syllables);
     const syllableToGuess:GuessSyllable = practice.next();

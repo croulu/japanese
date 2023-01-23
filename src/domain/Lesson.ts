@@ -1,6 +1,7 @@
 import {Syllable} from "./Syllable";
 import {Alphabet} from "./Alphabet";
 import {SyllableKana} from "./SyllableKana";
+import {groupSyllablesInLessons} from "./Syllable.factory";
 
 export class Lesson {
     id: string;
@@ -30,6 +31,20 @@ export class Lesson {
     extractFirstSyllableKana():SyllableKana {
         const syllableExtracted:Syllable = this.extractFirstSyllable();
         return new SyllableKana(syllableExtracted.alphabet, syllableExtracted.consonant, syllableExtracted.vowel);
+    }
+
+    completeSyllablesForDifficultLesson():Array<Syllable> {
+        let syllablesDifficult:Array<Syllable> = [];
+        let lessonsIncludedInThisDifficult:Array<Lesson> = [];
+
+        const lessons:Array<Lesson> = groupSyllablesInLessons(this.alphabet);
+
+        lessonsIncludedInThisDifficult = lessons.filter(lesson => lesson.order <= this.order);
+        lessonsIncludedInThisDifficult.forEach(lesson =>
+            lesson.syllables.forEach(syllable => syllablesDifficult.push(syllable))
+        );
+
+        return syllablesDifficult;
     }
 
 }

@@ -47,11 +47,13 @@ describe('Practice', function () {
         expect(actual).toBe(expected)
     });
 
-    it(`should provide next syllable kana to guess`, function () {
+    it(`should provide next syllable to guess`, function () {
         const sut = new Practice(syllables);
         const actual = sut.next();
 
         expect(actual).toBeInstanceOf(GuessSyllable);
     });
+
+    it.todo(`should change the set of guesses each time next is launched`);
 
 });

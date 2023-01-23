@@ -230,35 +230,35 @@ export function groupSyllablesInLessons(alphabet:Alphabet):Array<Lesson> {
             new Syllable(alphabet, 'g', 'u'),
             new Syllable(alphabet, 'g', 'e'),
             new Syllable(alphabet, 'g', 'o'),
-        ], 'ga gi gu ge go', 12),
+        ], 'ga gi gu ge go', 11),
         new Lesson([
             new Syllable(alphabet, 'z', 'a'),
             new Syllable(alphabet, 'z', 'i'),
             new Syllable(alphabet, 'z', 'u'),
             new Syllable(alphabet, 'z', 'e'),
             new Syllable(alphabet, 'z', 'o'),
-        ], 'za ji zu ze zo', 13),
+        ], 'za ji zu ze zo', 12),
         new Lesson([
             new Syllable(alphabet, 'd', 'a'),
             new Syllable(alphabet, 'd', 'i'),
             new Syllable(alphabet, 'd', 'u'),
             new Syllable(alphabet, 'd', 'e'),
             new Syllable(alphabet, 'd', 'o'),
-        ], 'da ji zu de do', 14),
+        ], 'da ji zu de do', 13),
         new Lesson([
             new Syllable(alphabet, 'b', 'a'),
             new Syllable(alphabet, 'b', 'i'),
             new Syllable(alphabet, 'b', 'u'),
             new Syllable(alphabet, 'b', 'e'),
             new Syllable(alphabet, 'b', 'o'),
-        ], 'ba bi bu be bo', 15),
+        ], 'ba bi bu be bo', 14),
         new Lesson([
             new Syllable(alphabet, 'p', 'a'),
             new Syllable(alphabet, 'p', 'i'),
             new Syllable(alphabet, 'p', 'u'),
             new Syllable(alphabet, 'p', 'e'),
             new Syllable(alphabet, 'p', 'o'),
-        ], 'pa pi pu pe po', 16),
+        ], 'pa pi pu pe po', 15),
     ];
 
     return lessons;
