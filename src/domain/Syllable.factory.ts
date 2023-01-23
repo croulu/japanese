@@ -153,9 +153,7 @@ export const mappingSyllableKanaRomaji:Array<string[]> = [
 ];
 
 export function groupSyllablesInAlphabets(alphabet:Alphabet):Array<Syllable> {
-    let syllables:Array<Syllable> = [];
-
-    syllables = [
+    return [
         new Syllable(alphabet, '', 'a'),
         new Syllable(alphabet, '', 'i'),
         new Syllable(alphabet, '', 'u'),
@@ -171,9 +169,63 @@ export function groupSyllablesInAlphabets(alphabet:Alphabet):Array<Syllable> {
         new Syllable(alphabet, 's', 'u'),
         new Syllable(alphabet, 's', 'e'),
         new Syllable(alphabet, 's', 'o'),
+        new Syllable(alphabet, 't', 'a'),
+        new Syllable(alphabet, 't', 'i'),
+        new Syllable(alphabet, 't', 'u'),
+        new Syllable(alphabet, 't', 'e'),
+        new Syllable(alphabet, 't', 'o'),
+        new Syllable(alphabet, 'n', 'a'),
+        new Syllable(alphabet, 'n', 'i'),
+        new Syllable(alphabet, 'n', 'u'),
+        new Syllable(alphabet, 'n', 'e'),
+        new Syllable(alphabet, 'n', 'o'),
+        new Syllable(alphabet, 'h', 'a'),
+        new Syllable(alphabet, 'h', 'i'),
+        new Syllable(alphabet, 'h', 'u'),
+        new Syllable(alphabet, 'h', 'e'),
+        new Syllable(alphabet, 'h', 'o'),
+        new Syllable(alphabet, 'm', 'a'),
+        new Syllable(alphabet, 'm', 'i'),
+        new Syllable(alphabet, 'm', 'u'),
+        new Syllable(alphabet, 'm', 'e'),
+        new Syllable(alphabet, 'm', 'o'),
+        new Syllable(alphabet, 'y', 'a'),
+        new Syllable(alphabet, 'y', 'u'),
+        new Syllable(alphabet, 'y', 'o'),
+        new Syllable(alphabet, 'r', 'a'),
+        new Syllable(alphabet, 'r', 'i'),
+        new Syllable(alphabet, 'r', 'u'),
+        new Syllable(alphabet, 'r', 'e'),
+        new Syllable(alphabet, 'r', 'o'),
+        new Syllable(alphabet, 'w', 'a'),
+        new Syllable(alphabet, 'w', 'o'),
+        new Syllable(alphabet, 'n', ''),
+        new Syllable(alphabet, 'g', 'a'),
+        new Syllable(alphabet, 'g', 'i'),
+        new Syllable(alphabet, 'g', 'u'),
+        new Syllable(alphabet, 'g', 'e'),
+        new Syllable(alphabet, 'g', 'o'),
+        new Syllable(alphabet, 'z', 'a'),
+        new Syllable(alphabet, 'z', 'i'),
+        new Syllable(alphabet, 'z', 'u'),
+        new Syllable(alphabet, 'z', 'e'),
+        new Syllable(alphabet, 'z', 'o'),
+        new Syllable(alphabet, 'd', 'a'),
+        new Syllable(alphabet, 'd', 'i'),
+        new Syllable(alphabet, 'd', 'u'),
+        new Syllable(alphabet, 'd', 'e'),
+        new Syllable(alphabet, 'd', 'o'),
+        new Syllable(alphabet, 'b', 'a'),
+        new Syllable(alphabet, 'b', 'i'),
+        new Syllable(alphabet, 'b', 'u'),
+        new Syllable(alphabet, 'b', 'e'),
+        new Syllable(alphabet, 'b', 'o'),
+        new Syllable(alphabet, 'p', 'a'),
+        new Syllable(alphabet, 'p', 'i'),
+        new Syllable(alphabet, 'p', 'u'),
+        new Syllable(alphabet, 'p', 'e'),
+        new Syllable(alphabet, 'p', 'o'),
     ];
-
-    return syllables;
 }
 
 export function groupSyllablesInLessons(alphabet:Alphabet):Array<Lesson> {

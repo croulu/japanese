@@ -161,12 +161,18 @@ body {
     grid-gap: 1vh;
 }
 
+.alphabetsMenu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-gap: 8vh;
+}
+
 .alphabetMenu {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(1, 1fr);
     grid-gap: 1vh;
-    border: 1px solid darkgrey;
 }
 
 .playKana {
@@ -187,7 +193,7 @@ body {
 }
 
 .kanaToLearn {
-    font-size: 2rem;
+    font-size: 3rem;
     text-align: center;
 }
 

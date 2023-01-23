@@ -8,7 +8,7 @@ export const SyllablesToLearn = (props: { alphabet: Alphabet }) => {
     const { alphabet } = props;
     const syllables = groupSyllablesInAlphabets(alphabet);
     return (
-        <div>
+        <div className="alphabetMenu">
             {
                 syllables.map((syllable) =>
                     <SyllablePicture
