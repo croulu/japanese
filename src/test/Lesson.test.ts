@@ -34,4 +34,11 @@ describe('Lesson', function () {
         expect(sut).toStrictEqual(expected)
     });
 
+    it(`should provide syllables of one lesson`, function () {
+        const sut = lesson.getSyllables();
+        const expected = syllables;
+
+        expect(sut).toStrictEqual(expected)
+    });
+
 });

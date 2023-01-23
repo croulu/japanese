@@ -1,13 +1,14 @@
 import React from "react";
 
-import {Lesson} from "../../domain/Lesson";
+import {Syllable} from "../../domain/Syllable";
 
-export const PlayItem = (props: { lesson: Lesson, level:string }) => {
-    const { lesson, level } = props;
+export const PlayItem = (props: { syllables:Syllable }) => {
+    const { syllables } = props;
+
     return (
-        <div className="page-block-content">{level}
+        <div className="page-block-content">
             <div>
-                Je joue !
+                Je joue au Kana!
             </div>
         </div>
     );

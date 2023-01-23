@@ -19,7 +19,7 @@ export class Lesson {
         // ici toutes les syllables de la leçon sont du même alphabet
     }
 
-    calculateId () {
+    calculateId ():string {
         return this.id = this.title.split(" ").join("");
     }
 
@@ -30,5 +30,9 @@ export class Lesson {
     extractFirstSyllableKana():SyllableKana {
         const syllableExtracted:Syllable = this.extractFirstSyllable();
         return new SyllableKana(syllableExtracted.alphabet, syllableExtracted.consonant, syllableExtracted.vowel);
+    }
+
+    getSyllables():Array<Syllable> {
+        return this.syllables;
     }
 }
