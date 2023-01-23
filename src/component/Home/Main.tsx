@@ -39,20 +39,6 @@ export const Main  = (props: { alphabets:Array<Alphabet> }) => {
                     <a href="/#" onClick={handleLessonClick} className="button button-primary">Voir la leçon</a>
                 </div>
             </div>
-            <div id="playMenu" className="page-block-content">
-                <AlphabetsToPlay
-                    key={"aa1"}
-                    alphabets={alphabets}
-                    ></AlphabetsToPlay>
-            </div>
         </>
     )
 };
-/*
-            <div className="page-block-content">
-                <AlphabetsToLearn
-                    key={"aa2"}
-                    lessons={lessons}
-                    ></AlphabetsToLearn>
-            </div>
- */
