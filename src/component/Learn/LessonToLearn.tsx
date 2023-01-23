@@ -10,7 +10,7 @@ export const LessonToLearn = (props: { lesson: Lesson }) => {
     let syllables:Array<Syllable> = lesson.syllables;
 
     return (
-        <div>
+        <div className="alphabetLessonMenu">
             {
                 syllables.map((syllable) =>
                     <SyllablePicture
