@@ -6,6 +6,8 @@ export const allAlphabets:Array<Alphabet> = [new Alphabet('hiragana'), new Alpha
 
 // TODO : vérifier les order pour les dakuten et handakuten
 // TODO : générer le title comme les romajis avec des espaces
+// TODO : mauvais affichage de l'alphabet wa wo n à cause du style de la lesson (conflit lesson et style)
+// TODO : style ya yu yo et wa wo n pas propre (pas étiré)
 
 export const mappingSyllableKanaRomaji:Array<string[]> = [
     ["hiraganaa", "\u3042", "a"],
@@ -220,8 +222,6 @@ export function groupSyllablesInLessons(alphabet:Alphabet):Array<Lesson> {
         new Lesson([
             new Syllable(alphabet, 'w', 'a'),
             new Syllable(alphabet, 'w', 'o'),
-        ], 'wa wo', 10),
-        new Lesson([
             new Syllable(alphabet, 'n', ''),
         ], 'wa wo n', 10),
         new Lesson([
@@ -230,35 +230,35 @@ export function groupSyllablesInLessons(alphabet:Alphabet):Array<Lesson> {
             new Syllable(alphabet, 'g', 'u'),
             new Syllable(alphabet, 'g', 'e'),
             new Syllable(alphabet, 'g', 'o'),
-        ], 'ga gi gu ge go', 11),
+        ], 'ga gi gu ge go', 12),
         new Lesson([
             new Syllable(alphabet, 'z', 'a'),
             new Syllable(alphabet, 'z', 'i'),
             new Syllable(alphabet, 'z', 'u'),
             new Syllable(alphabet, 'z', 'e'),
             new Syllable(alphabet, 'z', 'o'),
-        ], 'za ji zu ze zo', 12),
+        ], 'za ji zu ze zo', 13),
         new Lesson([
             new Syllable(alphabet, 'd', 'a'),
             new Syllable(alphabet, 'd', 'i'),
             new Syllable(alphabet, 'd', 'u'),
             new Syllable(alphabet, 'd', 'e'),
             new Syllable(alphabet, 'd', 'o'),
-        ], 'da ji zu de do', 13),
+        ], 'da ji zu de do', 14),
         new Lesson([
             new Syllable(alphabet, 'b', 'a'),
             new Syllable(alphabet, 'b', 'i'),
             new Syllable(alphabet, 'b', 'u'),
             new Syllable(alphabet, 'b', 'e'),
             new Syllable(alphabet, 'b', 'o'),
-        ], 'ba bi bu be bo', 14),
+        ], 'ba bi bu be bo', 15),
         new Lesson([
             new Syllable(alphabet, 'p', 'a'),
             new Syllable(alphabet, 'p', 'i'),
             new Syllable(alphabet, 'p', 'u'),
             new Syllable(alphabet, 'p', 'e'),
             new Syllable(alphabet, 'p', 'o'),
-        ], 'pa pi pu pe po', 14),
+        ], 'pa pi pu pe po', 16),
     ];
 
     return lessons;
