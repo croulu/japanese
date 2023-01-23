@@ -1,6 +1,8 @@
 import {Practice} from "../domain/Practice";
 import {Syllable} from "../domain/Syllable";
 import {Alphabet} from "../domain/Alphabet";
+import {GuessSyllable} from "../domain/GuessSyllable";
+import {SyllableKana} from "../domain/SyllableKana";
 
 const hiragana:Alphabet = new Alphabet("hiragana");
 
@@ -44,6 +46,13 @@ describe('Practice', function () {
         const expected = 3;
 
         expect(actual).toBe(expected)
+    });
+
+    it(`should provide next syllable to guess`, function () {
+        const sut = new Practice(syllables);
+        const actual = sut.next();
+
+        expect(actual).toBeInstanceOf(SyllableKana);
     });
 
 });

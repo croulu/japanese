@@ -1,5 +1,7 @@
 import {Syllable} from "./Syllable";
 import {randomizeSyllables} from "./randomizeSyllables";
+import {GuessSyllable} from "./GuessSyllable";
+import {SyllableKana} from "./SyllableKana";
 
 const MAX_SYLLABLES_TO_PROPOZE:number = 5;
 
@@ -19,7 +21,14 @@ export class Practice {
         return syllablesWholeSetRandomized.slice(0, MAX_SYLLABLES_TO_PROPOZE);
     }
 
+    next():SyllableKana {
+        const guessSyllable:GuessSyllable = new GuessSyllable(this.syllablesPracticeSet);
 
+        const kanaToGuess:SyllableKana = new SyllableKana(
+            guessSyllable.syllable.alphabet, guessSyllable.syllable.consonant, guessSyllable.syllable.vowel);
+
+        return kanaToGuess;
+    }
 
 
 }

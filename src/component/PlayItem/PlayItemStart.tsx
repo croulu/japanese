@@ -14,7 +14,6 @@ export const PlayItemStart = (props: { lesson: Lesson, level:string }) => {
             <div>
                 <div>Timer</div>
                 <div>Statistiques</div>
-                Je joue !
                 <PlayItem syllables={syllables} />
             </div>
         </div>
