@@ -5,6 +5,7 @@ import {Menu} from "./Home/Menu";
 import {Main} from "./Home/Main";
 import {allAlphabets} from "../domain/Syllable.factory";
 import {Alphabet} from "../domain/Alphabet";
+import {AlphabetsToLearn} from "./Learn/AlphabetsToLearn";
 
 export const Routing = () => {
     let  alphabets:Array<Alphabet> = allAlphabets;
@@ -20,15 +21,18 @@ export const Routing = () => {
                             alphabets={alphabets}
                         />
                     </>
-                }
-                />
+                } />
+                <Route path="/practice" element={<div>practice</div>} />
+                <Route path="/alphabets" element={
+                    <>
+                        <Menu/>
+                        <AlphabetsToLearn key={"fff"}
+                                          alphabets={alphabets} />
+                    </>
+                } />
             </Routes>
         </Router>
     );
 };
 
-/*
-                <Route path="/practice" element={<div>practice</div>} />
-                <Route path="/alphabets" element={<Alphabets key={"fff"}
-                                                             lessons={lessons}/>} />
- */
+

@@ -158,6 +158,19 @@ export function groupSyllablesInAlphabets(alphabet:Alphabet):Array<Syllable> {
     syllables = [
         new Syllable(alphabet, '', 'a'),
         new Syllable(alphabet, '', 'i'),
+        new Syllable(alphabet, '', 'u'),
+        new Syllable(alphabet, '', 'e'),
+        new Syllable(alphabet, '', 'o'),
+        new Syllable(alphabet, 'k', 'a'),
+        new Syllable(alphabet, 'k', 'i'),
+        new Syllable(alphabet, 'k', 'u'),
+        new Syllable(alphabet, 'k', 'e'),
+        new Syllable(alphabet, 'k', 'o'),
+        new Syllable(alphabet, 's', 'a'),
+        new Syllable(alphabet, 's', 'i'),
+        new Syllable(alphabet, 's', 'u'),
+        new Syllable(alphabet, 's', 'e'),
+        new Syllable(alphabet, 's', 'o'),
     ];
 
     return syllables;
@@ -215,7 +228,6 @@ export function groupSyllablesInLessons(alphabet:Alphabet):Array<Lesson> {
             new Syllable(alphabet, 'm', 'u'),
             new Syllable(alphabet, 'm', 'e'),
             new Syllable(alphabet, 'm', 'o'),
-
         ], 'ma mi mu me mo', 7),
         new Lesson([
             new Syllable(alphabet, 'y', 'a'),

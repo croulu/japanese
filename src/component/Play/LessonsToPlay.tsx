@@ -5,12 +5,12 @@ import {Alphabet} from "../../domain/Alphabet";
 import {LessonButton} from "./LessonButton";
 import {groupSyllablesInLessons} from "../../domain/Syllable.factory";
 
-export const LessonsForAlphabetToPlay = (props: {  alphabet: Alphabet }) => {
+export const LessonsToPlay = (props: {  alphabet: Alphabet }) => {
     const { alphabet } = props;
     let lessons:Array<Lesson> = groupSyllablesInLessons(alphabet);
 
     return (
-        <>{alphabet.name}
+        <><h2>{alphabet.name}</h2>
             <div className="playMenu">
                 {
                     lessons.map((lesson) =>

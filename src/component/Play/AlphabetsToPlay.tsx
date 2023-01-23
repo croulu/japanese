@@ -1,7 +1,7 @@
 import React from "react";
 
 import {Alphabet} from "../../domain/Alphabet";
-import {LessonsForAlphabetToPlay} from "./LessonsForAlphabetToPlay";
+import {LessonsToPlay} from "./LessonsToPlay";
 
 export const AlphabetsToPlay = (props: {  alphabets: Array<Alphabet> }) => {
     const { alphabets } = props;
@@ -10,7 +10,7 @@ export const AlphabetsToPlay = (props: {  alphabets: Array<Alphabet> }) => {
         <>
             {
             alphabets.map((alphabet) =>
-                <LessonsForAlphabetToPlay
+                <LessonsToPlay
                     key={alphabet.name}
                     alphabet={alphabet} />
 

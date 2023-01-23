@@ -50,9 +50,9 @@ export const Main  = (props: { alphabets:Array<Alphabet> }) => {
 };
 /*
             <div className="page-block-content">
-                <Alphabets
+                <AlphabetsToLearn
                     key={"aa2"}
                     lessons={lessons}
-                    ></Alphabets>
+                    ></AlphabetsToLearn>
             </div>
  */
