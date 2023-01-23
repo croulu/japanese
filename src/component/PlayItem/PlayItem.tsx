@@ -1,18 +1,23 @@
 import React from "react";
 
 import {Syllable} from "../../domain/Syllable";
-import {Practice} from "../../domain/Practice";
+import { Proposal } from "./Proposal";
+import {GuessSyllable} from "../../domain/GuessSyllable";
 import {SyllableKana} from "../../domain/SyllableKana";
 
-export const PlayItem = (props: { syllables:Array<Syllable> }) => {
-    const { syllables } = props;
+export const PlayItem = (props: { syllableToGuess:GuessSyllable }) => {
+    const { syllableToGuess } = props;
 
-    const practice:Practice = new Practice(syllables);
-    const kanaToGuess:SyllableKana = practice.next();
+    const kanaToGuess:SyllableKana = new SyllableKana(syllableToGuess.syllable.alphabet,
+        syllableToGuess.syllable.consonant, syllableToGuess.syllable.vowel);
 
     return (
         <div className="page-block-content">
             <div className="playItemKana">{kanaToGuess.display()}</div>
+            {
+                syllableToGuess.syllables.map((syllable:Syllable) =>
+                        <Proposal key={syllable.id} syllable={syllable} />)
+            }
         </div>
     );
 };

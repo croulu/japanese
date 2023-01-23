@@ -2,7 +2,6 @@ import {Practice} from "../domain/Practice";
 import {Syllable} from "../domain/Syllable";
 import {Alphabet} from "../domain/Alphabet";
 import {GuessSyllable} from "../domain/GuessSyllable";
-import {SyllableKana} from "../domain/SyllableKana";
 
 const hiragana:Alphabet = new Alphabet("hiragana");
 
@@ -34,7 +33,7 @@ describe('Practice', function () {
 
     it(`should provide a syllable set to practice for big set practice`, function () {
         const sut = new Practice(syllables);
-        const actual = sut.syllablesPracticeSet.length;
+        const actual = sut.syllablesOneSet.length;
         const expected = 5;
 
         expect(actual).toBeLessThanOrEqual(expected)
@@ -42,17 +41,17 @@ describe('Practice', function () {
 
     it(`should provide a syllable set to practice for short set practice`, function () {
         const sut = new Practice(syllablesShort);
-        const actual = sut.syllablesPracticeSet.length;
+        const actual = sut.syllablesOneSet.length;
         const expected = 3;
 
         expect(actual).toBe(expected)
     });
 
-    it(`should provide next syllable to guess`, function () {
+    it(`should provide next syllable kana to guess`, function () {
         const sut = new Practice(syllables);
         const actual = sut.next();
 
-        expect(actual).toBeInstanceOf(SyllableKana);
+        expect(actual).toBeInstanceOf(GuessSyllable);
     });
 
 });

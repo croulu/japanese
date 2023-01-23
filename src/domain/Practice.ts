@@ -8,11 +8,11 @@ const MAX_SYLLABLES_TO_PROPOZE:number = 5;
 export class Practice {
 
     syllablesWholeSet:Array<Syllable>;
-    syllablesPracticeSet:Array<Syllable>;
+    syllablesOneSet:Array<Syllable>;
 
     constructor (syllablesWholeSet:Array<Syllable>) {
         this.syllablesWholeSet = syllablesWholeSet;
-        this.syllablesPracticeSet = this.createPractice();
+        this.syllablesOneSet = this.createPractice();
     }
 
     createPractice():Array<Syllable> {
@@ -21,13 +21,10 @@ export class Practice {
         return syllablesWholeSetRandomized.slice(0, MAX_SYLLABLES_TO_PROPOZE);
     }
 
-    next():SyllableKana {
-        const guessSyllable:GuessSyllable = new GuessSyllable(this.syllablesPracticeSet);
+    next():GuessSyllable {
+        const guessSyllable:GuessSyllable = new GuessSyllable(this.syllablesOneSet);
 
-        const kanaToGuess:SyllableKana = new SyllableKana(
-            guessSyllable.syllable.alphabet, guessSyllable.syllable.consonant, guessSyllable.syllable.vowel);
-
-        return kanaToGuess;
+        return guessSyllable;
     }
 
 
