@@ -12,7 +12,7 @@ export const PlayItem = (props: { syllableToGuess:GuessSyllable }) => {
         syllableToGuess.syllable.consonant, syllableToGuess.syllable.vowel);
 
     return (
-        <div className="page-block-content">
+        <div className="playKana">
             <div className="playItemKana">{kanaToGuess.display()}</div>
             {
                 syllableToGuess.syllables.map((syllable:Syllable) =>
