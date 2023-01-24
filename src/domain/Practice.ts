@@ -21,6 +21,7 @@ export class Practice {
     }
 
     next():GuessSyllable {
+        this.syllablesOneSet = this.createOneSet();
         return new GuessSyllable(this.syllablesOneSet);
     }
 

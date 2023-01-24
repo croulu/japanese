@@ -2,14 +2,20 @@ import React, {useState} from "react";
 
 import { Proposal } from "./Proposal";
 import {Syllable} from "../../domain/Syllable";
-import {GuessSyllable} from "../../domain/GuessSyllable";
+import {Practice} from "../../domain/Practice";
 
-export const PlayItem = (props: { syllableToGuess:GuessSyllable }) => {
-    const { syllableToGuess } = props;
-    const [isChoiceValid, setIsChoiceValid] = useState<boolean | null>(null);
+export const PlayItem = (props: { practice:Practice }) => {
+    const { practice } = props;
+
+    const [syllableToGuess, setSyllableToGuess] = useState(practice.next());
+    const [isChoiceValid, setIsChoiceValid] = useState<boolean | null | undefined>(null);
 
     const handleProposalClick = (syllable:Syllable) => {
         setIsChoiceValid(syllable.isEquals(syllableToGuess.syllable));
+        setTimeout(() => {
+            setIsChoiceValid(undefined);
+            setSyllableToGuess(practice.next());
+        }, 1000);
     }
 
     const styleResultTrue = "resultPlayKana resultTrue";
