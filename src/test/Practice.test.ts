@@ -54,6 +54,20 @@ describe('Practice', function () {
         expect(actual).toBeInstanceOf(GuessSyllable);
     });
 
-    it.todo(`should change the set of guesses each time next is launched`);
+    it(`should provide +1 for success`, function () {
+        const sut = new Practice(syllables);
+        sut.success = 0;
+        const actual = sut.saveSuccess();
+
+        expect(actual).toBe(1);
+    });
+
+    it(`should provide +1 for total play`, function () {
+        const sut = new Practice(syllables);
+        sut.totalPlay = 0;
+        const actual = sut.saveTotalPlay();
+
+        expect(actual).toBe(1);
+    });
 
 });

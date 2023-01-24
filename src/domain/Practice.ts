@@ -9,9 +9,14 @@ export class Practice {
     syllablesWholeSet:Array<Syllable>;
     syllablesOneSet:Array<Syllable>;
 
+    success:number;
+    totalPlay:number;
+
     constructor (syllablesWholeSet:Array<Syllable>) {
         this.syllablesWholeSet = syllablesWholeSet;
         this.syllablesOneSet = this.randomizeOneSet();
+        this.success = 0;
+        this.totalPlay = 0;
     }
 
     randomizeOneSet():Array<Syllable> {
@@ -25,5 +30,14 @@ export class Practice {
         return new GuessSyllable(this.syllablesOneSet);
     }
 
+    saveSuccess():number {
+        this.success++;
+        return this.success;
+    }
+
+    saveTotalPlay():number {
+        this.totalPlay++;
+        return this.totalPlay;
+    }
 
 }
