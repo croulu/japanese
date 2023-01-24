@@ -28,7 +28,7 @@ export const Routing = () => {
     const [level, setLevel] = useState<string>("");
 
     const handleLesson = (lesson:Lesson) => {
-        if (level === "easy")
+        if (level === "facile")
             setLesson(lesson);
         else
             setLesson(lesson);

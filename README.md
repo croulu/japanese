@@ -11,3 +11,7 @@ https://learnjapanese.netlify.app/
 ###// TODO : mauvais affichage de l'alphabet wa wo n à cause du style de la lesson (conflit lesson et style)
 ###// TODO : style ya yu yo et wa wo n pas propre (pas étiré)
 
+### TODO : level facile et difficile à passer en constantes
+
+### TODO warning rendering component à la fin du timer
+

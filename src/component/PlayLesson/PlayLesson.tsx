@@ -9,7 +9,7 @@ export const PlayLesson = (props: { lesson: Lesson, level:string }) => {
     const { lesson, level } = props;
 
     let syllables:Array<Syllable>;
-    level === "easy" ? syllables = lesson.syllables : syllables = lesson.completeSyllablesForDifficultLesson();
+    level === "facile" ? syllables = lesson.syllables : syllables = lesson.completeSyllablesForDifficultLesson();
 
     const practice:Practice = new Practice(syllables);
 

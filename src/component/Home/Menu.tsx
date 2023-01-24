@@ -7,13 +7,13 @@ export const Menu = (props: { handleLevel:(level: string)=>void }) => {
     const navigate = useNavigate();
 
     const handleEasyLevelClick = function () {
-        handleLevel("easy");
+        handleLevel("facile");
 
         navigate('/practice');
     }
 
     const handleHardLevelClick = function () {
-        handleLevel("difficult");
+        handleLevel("difficile");
 
         navigate('/practice');
     }
