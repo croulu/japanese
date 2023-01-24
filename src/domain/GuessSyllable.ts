@@ -8,7 +8,7 @@ export class GuessSyllable {
 
     syllable:Syllable;
     syllables:Array<Syllable>;
-    isKanaToGuess:Boolean;
+    isKanaToGuess:boolean;
 
     constructor (syllables:Array<Syllable>) {
         this.syllable = randomizeSyllable(syllables);
