@@ -4,6 +4,7 @@ import { Proposal } from "./Proposal";
 import {Syllable} from "../../domain/Syllable";
 import {Practice} from "../../domain/Practice";
 import {Statistics} from "./Statistics";
+import {CountdownTimer} from "./CountdownTimer";
 
 export const PlayItem = (props: { practice:Practice }) => {
     const { practice } = props;
@@ -12,26 +13,36 @@ export const PlayItem = (props: { practice:Practice }) => {
     const [isChoiceValid, setIsChoiceValid] = useState<boolean | null | undefined>(null);
     const [success, setSuccess] = useState<number | null | undefined>(0);
     const [totalPlay, setTotalPlay] = useState<number | null | undefined>(0);
+    const [isCountdowntimer, setIsCountdowntimer] = useState<boolean | null | undefined>(true);
+    const [informations, setInformations] = useState<string>("");
 
-    const handleProposalClick = (syllable:Syllable) => {
-        const isValid:boolean = syllable.isEquals(syllableToGuess.syllable);
-        setIsChoiceValid(isValid);
-        if (isValid) setSuccess(practice.saveSuccess());
-        setTotalPlay(practice.saveTotalPlay())
-        setTimeout(() => {
-            setIsChoiceValid(undefined);
-            setSyllableToGuess(practice.next());
-        }, 1000);
-    }
-
-    const statistics:string = `${success} / ${totalPlay}`;
+    let statistics:string = `${success} / ${totalPlay}`;
 
     const styleResultTrue = "resultPlayKana resultTrue";
     const styleResultFalse = "resultPlayKana resultFalse";
 
+    const handleProposalClick = (syllable:Syllable) => {
+        if (isCountdowntimer) {
+            const isValid:boolean = syllable.isEquals(syllableToGuess.syllable);
+            setIsChoiceValid(isValid);
+            if (isValid) setSuccess(practice.saveSuccess());
+            setTotalPlay(practice.saveTotalPlay())
+            setTimeout(() => {
+                setIsChoiceValid(undefined);
+                setSyllableToGuess(practice.next());
+            }, 1000);
+        }
+    }
+
+    const handleOnTimeout = () => {
+        setIsCountdowntimer(false);
+        setInformations("fini !");
+    };
+
     return (
         <div>
-            <Statistics statistics={statistics}/>
+            <CountdownTimer onTimeout={handleOnTimeout}/>
+            <Statistics statistics={statistics} informations={informations}/>
             <div className={isChoiceValid ? styleResultTrue : styleResultFalse}>
                 {isChoiceValid ? <span>yes !</span> : isChoiceValid === false ? <span>no</span> : ""}
             </div>

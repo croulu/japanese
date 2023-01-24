@@ -7,7 +7,7 @@ import {allAlphabets} from "../domain/Syllable.factory";
 import {Alphabet} from "../domain/Alphabet";
 import {AlphabetsToLearn} from "./Learn/AlphabetsToLearn";
 import {AlphabetsToPlay} from "./PlayMenu/AlphabetsToPlay";
-import {PlayItemStart} from "./PlayItem/PlayItemStart";
+import {PlayLesson} from "./PlayLesson/PlayLesson";
 import {Lesson} from "../domain/Lesson";
 import {Syllable} from "../domain/Syllable";
 
@@ -42,7 +42,7 @@ export const Routing = () => {
                 <Route path="/play" element={
                     <>
                         <Menu />
-                        <PlayItemStart key={"lessonToPlay"} lesson={lessonForTest} level={levelForTest} />
+                        <PlayLesson key={"lessonToPlay"} lesson={lessonForTest} level={levelForTest} />
                     </>
                 } />
                 <Route path="/alphabets" element={

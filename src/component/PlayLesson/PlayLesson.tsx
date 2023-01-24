@@ -5,7 +5,7 @@ import {Syllable} from "../../domain/Syllable";
 import {PlayItem} from "./PlayItem";
 import {Practice} from "../../domain/Practice";
 
-export const PlayItemStart = (props: { lesson: Lesson, level:string }) => {
+export const PlayLesson = (props: { lesson: Lesson, level:string }) => {
     const { lesson, level } = props;
 
     let syllables:Array<Syllable>;
@@ -15,10 +15,7 @@ export const PlayItemStart = (props: { lesson: Lesson, level:string }) => {
 
     return (
         <div className="page-block-content">{level}
-            <div>
-                <div>Timer</div>
                 <PlayItem practice={practice} />
-            </div>
         </div>
     );
 };
