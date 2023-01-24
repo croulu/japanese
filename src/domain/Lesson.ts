@@ -46,6 +46,4 @@ export class Lesson {
 
         return syllablesDifficult;
     }
-
-    // TODO niveau très difficile ou la réponse n'est pas dans les propositions
 }
