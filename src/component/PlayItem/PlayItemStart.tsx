@@ -13,8 +13,6 @@ export const PlayItemStart = (props: { lesson: Lesson, level:string }) => {
 
     const practice:Practice = new Practice(syllables);
 
-    const statistics:string = "x/x";
-
     return (
         <div className="page-block-content">{level}
             <div>

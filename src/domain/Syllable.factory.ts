@@ -4,11 +4,6 @@ import {Alphabet} from "./Alphabet";
 
 export const allAlphabets:Array<Alphabet> = [new Alphabet('hiragana'), new Alphabet('katakana')];
 
-// TODO : vérifier les order pour les dakuten et handakuten
-// TODO : générer le title comme les romajis avec des espaces
-// TODO : mauvais affichage de l'alphabet wa wo n à cause du style de la lesson (conflit lesson et style)
-// TODO : style ya yu yo et wa wo n pas propre (pas étiré)
-
 export const mappingSyllableKanaRomaji:Array<string[]> = [
     ["hiraganaa", "\u3042", "a"],
     ["hiraganai", "\u3044", "i"],
