@@ -11,17 +11,17 @@ export class Practice {
 
     constructor (syllablesWholeSet:Array<Syllable>) {
         this.syllablesWholeSet = syllablesWholeSet;
-        this.syllablesOneSet = this.createOneSet();
+        this.syllablesOneSet = this.randomizeOneSet();
     }
 
-    createOneSet():Array<Syllable> {
+    randomizeOneSet():Array<Syllable> {
         const syllablesWholeSetRandomized:Array<Syllable> = randomizeSyllables(this.syllablesWholeSet);
 
         return syllablesWholeSetRandomized.slice(0, MAX_SYLLABLES_TO_PROPOZE);
     }
 
     next():GuessSyllable {
-        this.syllablesOneSet = this.createOneSet();
+        this.syllablesOneSet = this.randomizeOneSet();
         return new GuessSyllable(this.syllablesOneSet);
     }
 
