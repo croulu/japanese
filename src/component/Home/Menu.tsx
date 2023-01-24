@@ -1,29 +1,32 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
 
-export const Menu = () => {
+export const Menu = (props: { handleLevel:(level: string)=>void }) => {
+    const { handleLevel } = props;
+
     const navigate = useNavigate();
 
     const handleEasyLevelClick = function () {
+        handleLevel("easy");
 
         navigate('/practice');
     }
 
     const handleHardLevelClick = function () {
-
+        handleLevel("difficult");
 
         navigate('/practice');
     }
 
     const handleLessonClick = function () {
-        navigate('/practice');
+        navigate('/alphabets');
     }
 
     return (
         <>
             <div className="page-block">
                 <header className="header-main">
-                    <div className="logo-main"></div>
+                    <a href="/#"><div className="logo-main"></div></a>
 
                     <nav className="menu-main hamburger-navigation">
 
@@ -31,9 +34,9 @@ export const Menu = () => {
                         <input type="checkbox" id="hamburger"/>
 
                         <div className="hamburger-items">
-                            <a href="/#" className="menu-main-item" onClick={handleEasyLevelClick}>Entrainement facile</a>
-                            <a href="/#" className="menu-main-item" onClick={handleHardLevelClick}>Entrainement difficile</a>
-                            <a href="/#" className="menu-main-item" onClick={handleLessonClick}>Leçon</a>
+                            <a className="menu-main-item" onClick={handleEasyLevelClick}>Entrainement facile</a>
+                            <a className="menu-main-item" onClick={handleHardLevelClick}>Entrainement difficile</a>
+                            <a className="menu-main-item" onClick={handleLessonClick}>Leçon</a>
                         </div>
                     </nav>
 

@@ -5,8 +5,9 @@ import {Alphabet} from "../../domain/Alphabet";
 import {LessonButton} from "./LessonButton";
 import {groupSyllablesInLessons} from "../../domain/Syllable.factory";
 
-export const LessonsToPlay = (props: {  alphabet: Alphabet }) => {
-    const { alphabet } = props;
+export const LessonsToPlay = (props: {  alphabet: Alphabet, onLessonChange:(lesson:Lesson)=>void }) => {
+    const { alphabet, onLessonChange } = props;
+
     let lessons:Array<Lesson> = groupSyllablesInLessons(alphabet);
 
     return (
@@ -16,7 +17,9 @@ export const LessonsToPlay = (props: {  alphabet: Alphabet }) => {
                     lessons.map((lesson) =>
                         <LessonButton
                             key={alphabet.name + lesson.id}
-                            lesson={lesson} />
+                            lesson={lesson}
+                            onLessonChange={onLessonChange}
+                        />
 
                     )
                 }
