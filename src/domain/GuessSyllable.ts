@@ -43,6 +43,16 @@ export class GuessSyllable {
         }
     }
 
+    isGoodAnswerExcluded():boolean {
+        let isExcluded:boolean = false;
+
+        this.proposalsExcluded.forEach(syllableExcluded => {
+            if (syllableExcluded.isEquals(this.syllable)) isExcluded = true;
+        });
+
+        return isExcluded;
+    }
+
     useDisplay():string {
         if (this.isKanaToGuess) {
             const kanaSyllable = new SyllableKana(this.syllable.alphabet, this.syllable.consonant, this.syllable.vowel);

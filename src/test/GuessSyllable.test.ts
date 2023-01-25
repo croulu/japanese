@@ -57,10 +57,12 @@ describe('GuessSyllable', function () {
         expect(sut.proposalsExcluded.length).toBe(2);
     });
 
-    it.skip('should be completely different : proposals et proposals excluded for level -très difficile-', function () {
+    it('should check if proposals excluded contains good answer', function () {
         let sut = new GuessSyllable(syllables, levelTest);
+        sut.syllable = syllableToGuess;
+        const actual:boolean = sut.isGoodAnswerExcluded();
 
-        expect(sut.proposalsExcluded.length).toBe(2);
+        expect(actual).toBe(true);
     });
 
 });
