@@ -4,14 +4,17 @@ import {randomizeWhatToGuess} from "./randomizeWhatToGuess";
 import {SyllableKana} from "./SyllableKana";
 import {SyllableRomaji} from "./SyllableRomaji";
 
+const SYLLABLES_TO_KEEP_VERY_HARD_LESSON = 3;
+const SYLLABLES_TO_EXCLUDE_VERY_HARD_LESSON = 2;
+
 export class GuessSyllable {
 
     syllable:Syllable;
     level:string;
     syllables:Array<Syllable>;
     isKanaToGuess:boolean;
-    proposals:Array<Syllable>;
-    proposalsExcluded:Array<Syllable>;
+    proposals:Array<Syllable> = [];
+    proposalsExcluded:Array<Syllable> = [];
 
     // TODO level très difficile
     // + ajouter le level
@@ -27,14 +30,16 @@ export class GuessSyllable {
         this.level = level;
         this.syllables = syllables;
         this.isKanaToGuess = hasKanaToGuess();
-        this.proposals = syllables;
-        this.proposalsExcluded = syllables;
+        this.levelVeryHardOrNotVeryHard();
     }
 
-    levelVeryHard():void {
-        if (this.level !== "facile" && this.level !== "difficile") {
-            this.proposals.pop();
-            this.proposals.pop();
+    levelVeryHardOrNotVeryHard():void {
+        if (this.level === "facile" || this.level === "difficile") {
+            this.proposals = this.syllables;
+            this.proposalsExcluded = this.syllables;
+        } else {
+            this.proposals = this.syllables.slice(-SYLLABLES_TO_KEEP_VERY_HARD_LESSON);
+            this.proposalsExcluded = this.syllables.slice(0, SYLLABLES_TO_EXCLUDE_VERY_HARD_LESSON);
         }
     }
 

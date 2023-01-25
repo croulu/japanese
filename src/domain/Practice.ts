@@ -29,10 +29,7 @@ export class Practice {
 
     next():GuessSyllable {
         this.syllablesOneSet = this.randomizeOneSet();
-        let guessSyllable:GuessSyllable = new GuessSyllable(this.syllablesOneSet, this.level);
-        guessSyllable.levelVeryHard();
-        // TODO bug le constructeur se lance plusieurs fois, la fonction levelVeryHard doit se trouver à l'extérieur
-        return guessSyllable;
+        return new GuessSyllable(this.syllablesOneSet, this.level);
     }
 
     saveSuccess():number {
