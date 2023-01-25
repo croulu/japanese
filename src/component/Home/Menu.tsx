@@ -18,6 +18,12 @@ export const Menu = (props: { handleLevel:(level: string)=>void }) => {
         navigate('/practice');
     }
 
+    const handleVeryHardLevelClick = function () {
+        handleLevel("très difficile");
+
+        navigate('/practice');
+    }
+
     const handleLessonClick = function () {
         navigate('/alphabets');
     }
@@ -36,6 +42,7 @@ export const Menu = (props: { handleLevel:(level: string)=>void }) => {
                         <div className="hamburger-items">
                             <a className="menu-main-item" onClick={handleEasyLevelClick}>Entrainement facile</a>
                             <a className="menu-main-item" onClick={handleHardLevelClick}>Entrainement difficile</a>
+                            <a className="menu-main-item" onClick={handleVeryHardLevelClick}>Entrainement très difficile</a>
                             <a className="menu-main-item" onClick={handleLessonClick}>Leçon</a>
                         </div>
                     </nav>

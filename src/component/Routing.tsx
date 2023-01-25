@@ -30,8 +30,10 @@ export const Routing = () => {
     const handleLesson = (lesson:Lesson) => {
         if (level === "facile")
             setLesson(lesson);
-        else
+        else {
+            lesson.completeSyllablesForDifficultLesson();
             setLesson(lesson);
+        }
     }
 
     const handleLevel = (level:string) => {

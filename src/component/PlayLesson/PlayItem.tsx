@@ -6,8 +6,8 @@ import {Practice} from "../../domain/Practice";
 import {Statistics} from "./Statistics";
 import {CountdownTimer} from "./CountdownTimer";
 
-export const PlayItem = (props: { practice:Practice }) => {
-    const { practice } = props;
+export const PlayItem = (props: { practice:Practice, level:string }) => {
+    const { practice, level } = props;
 
     const [syllableToGuess, setSyllableToGuess] = useState(practice.next());
     const [isChoiceValid, setIsChoiceValid] = useState<boolean | null | undefined>(null);
@@ -53,7 +53,8 @@ export const PlayItem = (props: { practice:Practice }) => {
                             <Proposal key={syllable.id}
                                       syllable={syllable}
                                       isKanaToGuess={syllableToGuess.isKanaToGuess}
-                                      handleClick={handleProposalClick} />)
+                                      handleClick={handleProposalClick}
+                                      level={level} />)
                 }
             </div>
         </div>

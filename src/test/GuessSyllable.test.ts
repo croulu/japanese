@@ -46,10 +46,8 @@ describe('GuessSyllable', function () {
     });
 
     it('should create proposals for level -très difficile-', function () {
-        console.log(syllables);
         let sut = new GuessSyllable(syllables, levelTest);
-
-        console.log(syllables, sut.proposals);
+        sut.levelVeryHard();
 
         expect(sut.proposals.length).toBe(3);
     });

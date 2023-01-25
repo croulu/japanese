@@ -18,6 +18,12 @@ export const Main = (props: { handleLevel:(level: string)=>void }) => {
         navigate('/practice');
     }
 
+    const handleVeryHardLevelClick = function () {
+        handleLevel("très difficile");
+
+        navigate('/practice');
+    }
+
     const handleLessonClick = function () {
         navigate('/alphabets');
     }
@@ -33,6 +39,9 @@ export const Main = (props: { handleLevel:(level: string)=>void }) => {
                 </div>
                 <div className="page-block-button">
                     <a onClick={handleHardLevelClick} className="button">Entrainement difficile</a>
+                </div>
+                <div className="page-block-button">
+                    <a onClick={handleVeryHardLevelClick} className="button">Entrainement très difficile</a>
                 </div>
                 <div className="page-block-button">
                     <a onClick={handleLessonClick} className="button button-primary">Voir la leçon</a>

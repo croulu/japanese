@@ -15,10 +15,11 @@ export class GuessSyllable {
     // TODO level très difficile
     // + ajouter le level
     // + ajouter les proposals : list of syllables MOINS DEUX syllables (5 à 3 ou 3 à 1)
-    // ajouter une fausse syllable à proposals ?
-    // dans le composant playItem donner à Proposal le nouvel array
+    // + ajouter une fausse syllable à proposals ?
+    // + dans le composant playItem donner à Proposal le nouvel array
     // dans le composant proposal ajouter le bouton "aucun des choix ci-dessus"
-    // ajouter le menu
+    // + ajouter le menu
+    // savoir si la bonne réponse est l'autre réponse (syllable ?)
 
     constructor (syllables:Array<Syllable>, level:string) {
         this.syllable = randomizeSyllable(syllables);
@@ -26,14 +27,13 @@ export class GuessSyllable {
         this.syllables = syllables;
         this.isKanaToGuess = hasKanaToGuess();
         this.proposals = syllables;
-        if (this.level !== "facile" && this.level !== "difficile") {
-            this.removeTwoProposals();
-        }
     }
 
-    removeTwoProposals():void {
-        this.proposals.pop();
-        this.proposals.pop();
+    levelVeryHard():void {
+        if (this.level !== "facile" && this.level !== "difficile") {
+            this.proposals.pop();
+            this.proposals.pop();
+        }
     }
 
     useDisplay():string {
