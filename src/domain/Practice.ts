@@ -7,13 +7,15 @@ const MAX_SYLLABLES_TO_PROPOZE:number = 5;
 export class Practice {
 
     syllablesWholeSet:Array<Syllable>;
+    level:string;
     syllablesOneSet:Array<Syllable>;
 
     success:number;
     totalPlay:number;
 
-    constructor (syllablesWholeSet:Array<Syllable>) {
+    constructor (syllablesWholeSet:Array<Syllable>, level:string) {
         this.syllablesWholeSet = syllablesWholeSet;
+        this.level = level;
         this.syllablesOneSet = this.randomizeOneSet();
         this.success = 0;
         this.totalPlay = 0;
@@ -27,7 +29,7 @@ export class Practice {
 
     next():GuessSyllable {
         this.syllablesOneSet = this.randomizeOneSet();
-        return new GuessSyllable(this.syllablesOneSet);
+        return new GuessSyllable(this.syllablesOneSet, this.level);
     }
 
     saveSuccess():number {

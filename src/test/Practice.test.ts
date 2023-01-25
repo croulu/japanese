@@ -29,10 +29,12 @@ const syllablesShort = [
     new Syllable(hiragana, 'n', ''),
 ];
 
+const levelTest:string = "facile";
+
 describe('Practice', function () {
 
     it(`should provide a syllable set to practice for big set practice`, function () {
-        const sut = new Practice(syllables);
+        const sut = new Practice(syllables, levelTest);
         const actual = sut.syllablesOneSet.length;
         const expected = 5;
 
@@ -40,7 +42,7 @@ describe('Practice', function () {
     });
 
     it(`should provide a syllable set to practice for short set practice`, function () {
-        const sut = new Practice(syllablesShort);
+        const sut = new Practice(syllablesShort, levelTest);
         const actual = sut.syllablesOneSet.length;
         const expected = 3;
 
@@ -48,14 +50,14 @@ describe('Practice', function () {
     });
 
     it(`should provide next syllable to guess`, function () {
-        const sut = new Practice(syllables);
+        const sut = new Practice(syllables, levelTest);
         const actual = sut.next();
 
         expect(actual).toBeInstanceOf(GuessSyllable);
     });
 
     it(`should provide +1 for success`, function () {
-        const sut = new Practice(syllables);
+        const sut = new Practice(syllables, levelTest);
         sut.success = 0;
         const actual = sut.saveSuccess();
 
@@ -63,7 +65,7 @@ describe('Practice', function () {
     });
 
     it(`should provide +1 for total play`, function () {
-        const sut = new Practice(syllables);
+        const sut = new Practice(syllables, levelTest);
         sut.totalPlay = 0;
         const actual = sut.saveTotalPlay();
 

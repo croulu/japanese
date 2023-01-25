@@ -20,4 +20,5 @@ https://github.com/croulu/japanese
 
     TODO warning rendering component à la fin du timer
 
+    TODO : useDisplay de GuessSyllable renvoie un string au lieu de renvoyer un new SyllableKana ou new SyllableRomaji -> utiliser un pattern strategie ?
 

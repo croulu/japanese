@@ -16,17 +16,19 @@ const syllableToGuess = new Syllable(hiragana, '', 'i');
 const kanaDisplay:string = "\u3044";
 const romajiDisplay:string = "i";
 
+const levelTest:string = "très difficile";
+
 describe('GuessSyllable', function () {
 
     it(`should provide one syllable to guess`, function () {
-        const sut = new GuessSyllable(syllables);
+        const sut = new GuessSyllable(syllables, levelTest);
         const actual = sut.syllable;
 
         expect(actual).toBeInstanceOf(Syllable);
     });
 
     it('should display kana', function () {
-        let sut = new GuessSyllable(syllables);
+        let sut = new GuessSyllable(syllables, levelTest);
         sut.syllable = syllableToGuess;
         sut.isKanaToGuess = true;
         const actual = sut.useDisplay();
@@ -35,12 +37,21 @@ describe('GuessSyllable', function () {
     });
 
     it('should display romaji', function () {
-        let sut = new GuessSyllable(syllables);
+        let sut = new GuessSyllable(syllables, levelTest);
         sut.syllable = syllableToGuess;
         sut.isKanaToGuess = false;
         const actual = sut.useDisplay();
 
         expect(actual).toBe(romajiDisplay);
+    });
+
+    it('should create proposals for level -très difficile-', function () {
+        console.log(syllables);
+        let sut = new GuessSyllable(syllables, levelTest);
+
+        console.log(syllables, sut.proposals);
+
+        expect(sut.proposals.length).toBe(3);
     });
 
 });

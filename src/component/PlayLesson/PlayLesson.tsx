@@ -11,7 +11,7 @@ export const PlayLesson = (props: { lesson: Lesson, level:string }) => {
     let syllables:Array<Syllable>;
     level === "facile" ? syllables = lesson.syllables : syllables = lesson.completeSyllablesForDifficultLesson();
 
-    const practice:Practice = new Practice(syllables);
+    const practice:Practice = new Practice(syllables, level);
 
     return (
         <div className="page-block-content">{level}

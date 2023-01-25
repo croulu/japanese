@@ -49,7 +49,7 @@ export const PlayItem = (props: { practice:Practice }) => {
             <div className="playKana">
                 <div className="playItemKana">{syllableToGuess.useDisplay()}</div>
                 {
-                    syllableToGuess.syllables.map((syllable:Syllable) =>
+                    syllableToGuess.proposals.map((syllable:Syllable) =>
                             <Proposal key={syllable.id}
                                       syllable={syllable}
                                       isKanaToGuess={syllableToGuess.isKanaToGuess}
