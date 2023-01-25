@@ -5,6 +5,8 @@ import {Syllable} from "../../domain/Syllable";
 import {Practice} from "../../domain/Practice";
 import {Statistics} from "./Statistics";
 import {CountdownTimer} from "./CountdownTimer";
+import {GuessSyllable} from "../../domain/GuessSyllable";
+import {ProposalNoneOfAbove} from "./ProposalNoneOfAbove";
 
 export const PlayItem = (props: { practice:Practice, level:string }) => {
     const { practice, level } = props;
@@ -34,10 +36,25 @@ export const PlayItem = (props: { practice:Practice, level:string }) => {
         }
     }
 
+    const handleProposalExcludedClick = (syllableToGuess:GuessSyllable) => {
+        if (isCountdowntimer) {
+            const isValid:boolean = syllableToGuess.isGoodAnswerExcluded();
+            setIsChoiceValid(isValid);
+            if (isValid) setSuccess(practice.saveSuccess());
+            setTotalPlay(practice.saveTotalPlay())
+            setTimeout(() => {
+                setIsChoiceValid(undefined);
+                setSyllableToGuess(practice.next());
+            }, 1000);
+        }
+    }
+
     const handleOnTimeout = () => {
         setIsCountdowntimer(false);
         setInformations("fini !");
     };
+
+    // TODO logique métier à enlever dans le rendu du composant
 
     return (
         <div>
@@ -49,12 +66,19 @@ export const PlayItem = (props: { practice:Practice, level:string }) => {
             <div className="playKana">
                 <div className="playItemKana">{syllableToGuess.useDisplay()}</div>
                 {
-                    syllableToGuess.proposals.map((syllable:Syllable) =>
-                            <Proposal key={syllable.id}
-                                      syllable={syllable}
-                                      isKanaToGuess={syllableToGuess.isKanaToGuess}
-                                      handleClick={handleProposalClick}
-                                      level={level} />)
+                    syllableToGuess.proposals.map((syllable: Syllable) =>
+                        <Proposal key={syllable.id}
+                                  syllable={syllable}
+                                  isKanaToGuess={syllableToGuess.isKanaToGuess}
+                                  handleClick={handleProposalClick}
+                                  level={level} />)
+                }
+                {
+                    (level !== "facile" && level !== "difficile")
+                    ? <div><ProposalNoneOfAbove
+                        key="none" syllableToGuess={syllableToGuess}
+                        handleClick={handleProposalExcludedClick}/></div>
+                    : <div></div>
                 }
             </div>
         </div>

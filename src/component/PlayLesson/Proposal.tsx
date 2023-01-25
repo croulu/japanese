@@ -16,7 +16,7 @@ export const Proposal = (props: { syllable:Syllable, isKanaToGuess:boolean, hand
         const syllableKana = new SyllableKana(syllable.alphabet, syllable.consonant, syllable.vowel);
         displayProposal = syllableKana.display();
     }
-
+    
     return (
         <div className="playKanaChoiceItem">
             <div> <a onClick={() => handleClick(syllable)}>

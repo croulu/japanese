@@ -9,7 +9,6 @@ export class Practice {
     syllablesWholeSet:Array<Syllable>;
     level:string;
     syllablesOneSet:Array<Syllable>;
-
     success:number;
     totalPlay:number;
 
