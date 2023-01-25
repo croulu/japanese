@@ -11,6 +11,7 @@ export class GuessSyllable {
     syllables:Array<Syllable>;
     isKanaToGuess:boolean;
     proposals:Array<Syllable>;
+    proposalsExcluded:Array<Syllable>;
 
     // TODO level très difficile
     // + ajouter le level
@@ -27,6 +28,7 @@ export class GuessSyllable {
         this.syllables = syllables;
         this.isKanaToGuess = hasKanaToGuess();
         this.proposals = syllables;
+        this.proposalsExcluded = syllables;
     }
 
     levelVeryHard():void {
