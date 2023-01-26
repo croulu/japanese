@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
+import {LEVEL_EASY, LEVEL_DIFFICULT, LEVEL_VERY_DIFFICULT} from "../../domain/Syllable.factory";
 
 export const Main = (props: { handleLevel:(level: string)=>void }) => {
     const { handleLevel } = props;
@@ -7,19 +8,19 @@ export const Main = (props: { handleLevel:(level: string)=>void }) => {
     const navigate = useNavigate();
 
     const handleEasyLevelClick = function () {
-        handleLevel("facile");
+        handleLevel(LEVEL_EASY);
 
         navigate('/practice');
     }
 
     const handleHardLevelClick = function () {
-        handleLevel("difficile");
+        handleLevel(LEVEL_DIFFICULT);
 
         navigate('/practice');
     }
 
     const handleVeryHardLevelClick = function () {
-        handleLevel("très difficile");
+        handleLevel(LEVEL_VERY_DIFFICULT);
 
         navigate('/practice');
     }

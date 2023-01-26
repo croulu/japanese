@@ -7,6 +7,7 @@ import {Statistics} from "./Statistics";
 import {CountdownTimer} from "./CountdownTimer";
 import {GuessSyllable} from "../../domain/GuessSyllable";
 import {ProposalNoneOfAbove} from "./ProposalNoneOfAbove";
+import {LEVEL_EASY, LEVEL_DIFFICULT} from "../../domain/Syllable.factory";
 
 export const PlayItem = (props: { practice:Practice, level:string }) => {
     const { practice, level } = props;
@@ -35,7 +36,7 @@ export const PlayItem = (props: { practice:Practice, level:string }) => {
             }, 1000);
         }
     }
-
+// TODO factoriser ici
     const handleProposalExcludedClick = (syllableToGuess:GuessSyllable) => {
         if (isCountdowntimer) {
             const isValid:boolean = syllableToGuess.isGoodAnswerExcluded();
@@ -74,7 +75,7 @@ export const PlayItem = (props: { practice:Practice, level:string }) => {
                                   level={level} />)
                 }
                 {
-                    (level !== "facile" && level !== "difficile")
+                    (level !== LEVEL_EASY && level !== LEVEL_DIFFICULT)
                     ? <div><ProposalNoneOfAbove
                         key="none" syllableToGuess={syllableToGuess}
                         handleClick={handleProposalExcludedClick}/></div>

@@ -1,6 +1,7 @@
 import {GuessSyllable} from "../domain/GuessSyllable";
 import {Syllable} from "../domain/Syllable";
 import {Alphabet} from "../domain/Alphabet";
+import {LEVEL_VERY_DIFFICULT} from "../domain/Syllable.factory";
 
 const hiragana:Alphabet = new Alphabet("hiragana");
 
@@ -16,7 +17,7 @@ const syllableToGuess = new Syllable(hiragana, '', 'i');
 const kanaDisplay:string = "\u3044";
 const romajiDisplay:string = "i";
 
-const levelTest:string = "très difficile";
+const levelTest:string = LEVEL_VERY_DIFFICULT;
 
 describe('GuessSyllable', function () {
 

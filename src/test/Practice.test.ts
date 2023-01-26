@@ -2,6 +2,7 @@ import {Practice} from "../domain/Practice";
 import {Syllable} from "../domain/Syllable";
 import {Alphabet} from "../domain/Alphabet";
 import {GuessSyllable} from "../domain/GuessSyllable";
+import {LEVEL_EASY} from "../domain/Syllable.factory";
 
 const hiragana:Alphabet = new Alphabet("hiragana");
 
@@ -29,7 +30,7 @@ const syllablesShort = [
     new Syllable(hiragana, 'n', ''),
 ];
 
-const levelTest:string = "facile";
+const levelTest:string = LEVEL_EASY;
 
 describe('Practice', function () {
 

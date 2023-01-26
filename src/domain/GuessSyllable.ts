@@ -3,6 +3,7 @@ import {randomizeSyllable} from "./randomizeSyllable";
 import {randomizeWhatToGuess} from "./randomizeWhatToGuess";
 import {SyllableKana} from "./SyllableKana";
 import {SyllableRomaji} from "./SyllableRomaji";
+import {LEVEL_DIFFICULT, LEVEL_EASY} from "./Syllable.factory";
 
 const SYLLABLES_TO_KEEP_VERY_HARD_LESSON = 3;
 const SYLLABLES_TO_EXCLUDE_VERY_HARD_LESSON = 2;
@@ -25,7 +26,7 @@ export class GuessSyllable {
     }
 
     levelVeryHardOrNotVeryHard():void {
-        if (this.level === "facile" || this.level === "difficile") {
+        if (this.level === LEVEL_EASY || this.level === LEVEL_DIFFICULT) {
             this.proposals = this.syllables;
             this.proposalsExcluded = this.syllables;
         } else {

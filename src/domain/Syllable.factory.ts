@@ -2,6 +2,10 @@ import {Syllable} from "./Syllable";
 import {Lesson} from "./Lesson";
 import {Alphabet} from "./Alphabet";
 
+export const LEVEL_EASY = "facile";
+export const LEVEL_DIFFICULT = "difficile";
+export const LEVEL_VERY_DIFFICULT = "très difficile";
+
 export const allAlphabets:Array<Alphabet> = [new Alphabet('hiragana'), new Alphabet('katakana')];
 
 export const mappingSyllableKanaRomaji:Array<string[]> = [

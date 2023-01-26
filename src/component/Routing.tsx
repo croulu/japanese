@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 import {Menu} from "./Home/Menu";
 import {Main} from "./Home/Main";
-import {allAlphabets} from "../domain/Syllable.factory";
+import {allAlphabets, LEVEL_EASY} from "../domain/Syllable.factory";
 import {Alphabet} from "../domain/Alphabet";
 import {AlphabetsToLearn} from "./Learn/AlphabetsToLearn";
 import {AlphabetsToPlay} from "./PlayMenu/AlphabetsToPlay";
@@ -28,7 +28,7 @@ export const Routing = () => {
     const [level, setLevel] = useState<string>("");
 
     const handleLesson = (lesson:Lesson) => {
-        if (level === "facile")
+        if (level === LEVEL_EASY)
             setLesson(lesson);
         else {
             lesson.completeSyllablesForDifficultLesson();
