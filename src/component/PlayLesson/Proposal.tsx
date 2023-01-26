@@ -19,7 +19,7 @@ export const Proposal = (props: { syllable:Syllable, isKanaToGuess:boolean, hand
     
     return (
         <div className="playKanaChoiceItem">
-            <div> <button onClick={() => handleClick(syllable)}>
+            <div> <button className="resetButton" onClick={() => handleClick(syllable)}>
                 {displayProposal}
             </button></div>
         </div>

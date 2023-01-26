@@ -17,13 +17,14 @@ export const LessonButton = (props: { lesson: Lesson, onLessonChange:(lesson:Les
     }
 
     return (
-        <div>
-            <a onClick={handleClick}>
+        <div><center>
+            <button className="resetButton" onClick={handleClick}>
                 <div className="kanaToPlay">
                     {firstSyllableKanaPerLesson.display()}
                 </div>
                 <div className="labelForKanaToPlay">{lesson.title}</div>
-            </a>
+            </button>
+        </center>
         </div>
     );
 };

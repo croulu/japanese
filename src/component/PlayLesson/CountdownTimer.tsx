@@ -5,26 +5,22 @@ const onTwoDigits = (numberTimer:number) => String(numberTimer).padStart(2, "0")
 export const CountdownTimer = (props: { onTimeout:()=>void }) => {
     const { onTimeout } = props;
 
-    const [countdown, setCountdown] = useState(60);
+    const [counter, setCounter] = useState(59);
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setCountdown(countdown => {
-                if (countdown === 1) {
-                    clearInterval(interval);
+        counter > 0 && setTimeout(() => {
+                setCounter(counter - 1);
+                if (counter === 1) {
                     onTimeout();
                 }
-                return countdown - 1;
-            })
-        }, 1000)
-        return () => clearInterval(interval);
-    }, []);
+        }, 1000);
+    }, [counter, onTimeout]);
 
-    const minutes = onTwoDigits(Math.floor(countdown / 60));
-    const seconds = onTwoDigits(countdown % 60);
+
     return <>
         <div className="countdownTimer">
-            <div className="time">{minutes}:{seconds}</div>
+            <div>00:{onTwoDigits(counter)}</div>
         </div>
     </>;
 };
+
