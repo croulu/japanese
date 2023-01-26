@@ -10,7 +10,7 @@ export const LessonsToLearn = (props: { alphabet: Alphabet }) => {
     let lessons:Array<Lesson> = groupSyllablesInLessons(alphabet);
 
     return (
-        <div className="alphabetMenu">
+        <div className="alphabetMenu"><h2>{alphabet.name}</h2>
             {
                 lessons.map((lesson) =>
                     <LessonToLearn

@@ -6,10 +6,10 @@ import {Alphabet} from "../../domain/Alphabet";
 export const AlphabetsToLearn = (props: { alphabets: Array<Alphabet> }) => {
     const { alphabets } = props;
     return (
-        <div className="alphabetsMenu">
+        <div>
             {
                 alphabets.map((alphabet) =>
-                    <LessonsToLearn
+                <LessonsToLearn
                         key={"learn_"+alphabet.name}
                         alphabet={alphabet} />
                 )}
