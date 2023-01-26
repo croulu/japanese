@@ -8,7 +8,7 @@ export const ProposalNoneOfAbove = (props: { syllableToGuess:GuessSyllable, hand
 
     return (
         <div className="playKanaChoiceItemNone">
-            <div> <button onClick={() => handleClick(syllableToGuess)}>
+            <div> <button className="resetButton" onClick={() => handleClick(syllableToGuess)}>
                 {displayProposal}
             </button></div>
         </div>

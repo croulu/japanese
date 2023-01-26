@@ -97,7 +97,7 @@ body {
         /* border: 1px solid green; */
     }
 
-    .hamburger-items a {
+    .hamburger-items button {
         text-align: center;
         padding: 1rem;
         border-bottom: 1px solid var(--hairline-color);
