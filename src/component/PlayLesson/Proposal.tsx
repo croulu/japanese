@@ -5,7 +5,7 @@ import {SyllableRomaji} from "../../domain/SyllableRomaji";
 import {SyllableKana} from "../../domain/SyllableKana";
 
 export const Proposal = (props: { syllable:Syllable, isKanaToGuess:boolean, handleClick:(syllable: Syllable)=>void, level:string }) => {
-    const { syllable, isKanaToGuess, handleClick, level } = props;
+    const { syllable, isKanaToGuess, handleClick } = props;
 
     // TODO logique à enlever d'ici
     let displayProposal:string;
@@ -19,9 +19,9 @@ export const Proposal = (props: { syllable:Syllable, isKanaToGuess:boolean, hand
     
     return (
         <div className="playKanaChoiceItem">
-            <div> <a onClick={() => handleClick(syllable)}>
+            <div> <button onClick={() => handleClick(syllable)}>
                 {displayProposal}
-            </a></div>
+            </button></div>
         </div>
     );
 };

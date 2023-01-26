@@ -77,7 +77,7 @@ export const PlayItem = (props: { practice:Practice, level:string }) => {
                     ? <div><ProposalNoneOfAbove
                         key="none" syllableToGuess={syllableToGuess}
                         handleClick={handleProposalExcludedClick}/></div>
-                    : <div></div>
+                    : <div>&nbsp;</div>
                 }
             </div>
         </div>
