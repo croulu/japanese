@@ -337,9 +337,13 @@ body {
     height: 100px;
 }
 
-
 .playKanaChoiceItem {
     font-size: 3em;
+}
+
+.playKanaChoiceItemNone {
+    font-size: 2em;
+    color: #000000;
 }
 
 .alphabet {

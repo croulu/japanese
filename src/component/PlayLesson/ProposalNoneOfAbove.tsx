@@ -4,10 +4,10 @@ import {GuessSyllable} from "../../domain/GuessSyllable";
 export const ProposalNoneOfAbove = (props: { syllableToGuess:GuessSyllable, handleClick:(syllable: GuessSyllable)=>void }) => {
     const { syllableToGuess, handleClick } = props;
 
-    const displayProposal:string = "Aucun !";
+    const displayProposal:string = "aucun !";
 
     return (
-        <div className="playKanaChoiceItem">
+        <div className="playKanaChoiceItemNone">
             <div> <a onClick={() => handleClick(syllableToGuess)}>
                 {displayProposal}
             </a></div>

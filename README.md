@@ -18,3 +18,4 @@ https://github.com/croulu/japanese
 
     TODO : useDisplay de GuessSyllable renvoie un string au lieu de renvoyer un new SyllableKana ou new SyllableRomaji -> utiliser un pattern strategie ?
 
+    TODO : styles index.css à revoir

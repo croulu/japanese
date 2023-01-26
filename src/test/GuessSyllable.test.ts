@@ -49,13 +49,13 @@ describe('GuessSyllable', function () {
     it('should create proposals for level -très difficile-', function () {
         let sut = new GuessSyllable(syllables, levelTest);
 
-        expect(sut.proposals.length).toBe(3);
+        expect(sut.proposals.length).toBe(2);
     });
 
     it('should create proposals excluded for level -très difficile-', function () {
         let sut = new GuessSyllable(syllables, levelTest);
 
-        expect(sut.proposalsExcluded.length).toBe(2);
+        expect(sut.proposalsExcluded.length).toBe(3);
     });
 
     it('should check if proposals excluded contains good answer', function () {

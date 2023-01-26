@@ -5,8 +5,8 @@ import {SyllableKana} from "./SyllableKana";
 import {SyllableRomaji} from "./SyllableRomaji";
 import {LEVEL_DIFFICULT, LEVEL_EASY} from "./Syllable.factory";
 
-const SYLLABLES_TO_KEEP_VERY_HARD_LESSON = 3;
-const SYLLABLES_TO_EXCLUDE_VERY_HARD_LESSON = 2;
+const SYLLABLES_TO_KEEP_VERY_HARD_LESSON = 2;
+const SYLLABLES_TO_EXCLUDE_VERY_HARD_LESSON = 3;
 
 export class GuessSyllable {
 

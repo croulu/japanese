@@ -27,27 +27,25 @@ export const PlayItem = (props: { practice:Practice, level:string }) => {
     const handleProposalClick = (syllable:Syllable) => {
         if (isCountdowntimer) {
             const isValid:boolean = syllable.isEquals(syllableToGuess.syllable);
-            setIsChoiceValid(isValid);
-            if (isValid) setSuccess(practice.saveSuccess());
-            setTotalPlay(practice.saveTotalPlay())
-            setTimeout(() => {
-                setIsChoiceValid(undefined);
-                setSyllableToGuess(practice.next());
-            }, 1000);
+            checkSoluceAndContinue(isValid);
         }
     }
-// TODO factoriser ici
+
     const handleProposalExcludedClick = (syllableToGuess:GuessSyllable) => {
         if (isCountdowntimer) {
             const isValid:boolean = syllableToGuess.isGoodAnswerExcluded();
-            setIsChoiceValid(isValid);
-            if (isValid) setSuccess(practice.saveSuccess());
-            setTotalPlay(practice.saveTotalPlay())
-            setTimeout(() => {
-                setIsChoiceValid(undefined);
-                setSyllableToGuess(practice.next());
-            }, 1000);
+            checkSoluceAndContinue(isValid);
         }
+    }
+
+    function checkSoluceAndContinue(isValid: boolean) {
+        setIsChoiceValid(isValid);
+        if (isValid) setSuccess(practice.saveSuccess());
+        setTotalPlay(practice.saveTotalPlay())
+        setTimeout(() => {
+            setIsChoiceValid(undefined);
+            setSyllableToGuess(practice.next());
+        }, 1000);
     }
 
     const handleOnTimeout = () => {
