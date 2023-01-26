@@ -18,6 +18,12 @@ body {
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+a img {
+    border: none !important;
+    background: transparent !important;
+    background-size: cover;
+}
+
 .page-block {
     padding: 0 1rem 0 1rem;
     background-color: var(--menu-color);
@@ -41,8 +47,8 @@ body {
 .logo-main {
     height: 100px;
     width: 120px;
-    background-image: url("japan.png");
     background-size: cover;
+    outline: none;
 }
 
 .menu-main {
@@ -351,11 +357,13 @@ body {
     background: none;
     color: inherit;
     border: none;
-    padding: 2;
+    padding: 2px;
     font: inherit;
     cursor: pointer;
-    outline: inherit;
+    outline: none;
 }
+
+button:focus { outline: none; }
 
 .alphabet {
     display: grid;

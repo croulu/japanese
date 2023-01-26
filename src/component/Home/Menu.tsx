@@ -29,11 +29,16 @@ export const Menu = (props: { handleLevel:(level: string)=>void }) => {
         navigate('/alphabets');
     }
 
+    const home = function () {
+        navigate('/');
+    }
+
     return (
         <>
             <div className="page-block">
                 <header className="header-main">
-                    <a href="/#" ><div className="logo-main"></div></a>
+                    <button className="resetButton" onClick={home}><img
+                        src={"japan.png"} className="logo-main japan" alt="logo" /></button>
 
                     <nav className="menu-main hamburger-navigation">
 
