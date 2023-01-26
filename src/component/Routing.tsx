@@ -24,7 +24,6 @@ export const Routing = () => {
         ], 'a i u e o', 1);
 
     const [lesson, setLesson] = useState<Lesson>(lessonForInit);
-    const [alphabet, setAlphabet] = useState<Alphabet>(alphabetForInit);
     const [level, setLevel] = useState<string>("");
 
     const handleLesson = (lesson:Lesson) => {

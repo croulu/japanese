@@ -33,7 +33,7 @@ export const Menu = (props: { handleLevel:(level: string)=>void }) => {
         <>
             <div className="page-block">
                 <header className="header-main">
-                    <a href="/#"><div className="logo-main"></div></a>
+                    <a href="/#" ><div className="logo-main"></div></a>
 
                     <nav className="menu-main hamburger-navigation">
 
@@ -41,10 +41,10 @@ export const Menu = (props: { handleLevel:(level: string)=>void }) => {
                         <input type="checkbox" id="hamburger"/>
 
                         <div className="hamburger-items">
-                            <a className="menu-main-item" onClick={handleEasyLevelClick}>Entrainement facile</a>
-                            <a className="menu-main-item" onClick={handleHardLevelClick}>Entrainement difficile</a>
-                            <a className="menu-main-item" onClick={handleVeryHardLevelClick}>Entrainement très difficile</a>
-                            <a className="menu-main-item" onClick={handleLessonClick}>Leçon</a>
+                            <button className="menu-main-item resetButton" onClick={handleEasyLevelClick}>Entrainement facile</button>
+                            <button className="menu-main-item resetButton" onClick={handleHardLevelClick}>Entrainement difficile</button>
+                            <button className="menu-main-item resetButton" onClick={handleVeryHardLevelClick}>Entrainement très difficile</button>
+                            <button className="menu-main-item resetButton" onClick={handleLessonClick}>Leçon</button>
                         </div>
                     </nav>
 

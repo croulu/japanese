@@ -111,7 +111,8 @@ body {
 /* button */
 
 .button {
-    font-weight: 700;
+    font-weight: 600;
+    font-size: large;
     text-decoration: none;
     background-color: var(--menu-color);
     border: 1px solid var(--menu-color);
@@ -344,6 +345,16 @@ body {
 .playKanaChoiceItemNone {
     font-size: 2em;
     color: #000000;
+}
+
+.resetButton {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 2;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
 }
 
 .alphabet {

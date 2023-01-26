@@ -36,16 +36,16 @@ export const Main = (props: { handleLevel:(level: string)=>void }) => {
                 <p className=" main main-subtitle">Bon, d'accord ce n'est pas facile, nous allons vous aider
                     ;)</p>
                 <div className="page-block-button">
-                    <a onClick={handleEasyLevelClick} className="button">Entrainement facile</a>
+                    <button onClick={handleEasyLevelClick} className="button">Entrainement facile</button>
                 </div>
                 <div className="page-block-button">
-                    <a onClick={handleHardLevelClick} className="button">Entrainement difficile</a>
+                    <button onClick={handleHardLevelClick} className="button">Entrainement difficile</button>
                 </div>
                 <div className="page-block-button">
-                    <a onClick={handleVeryHardLevelClick} className="button">Entrainement très difficile</a>
+                    <button onClick={handleVeryHardLevelClick} className="button">Entrainement très difficile</button>
                 </div>
                 <div className="page-block-button">
-                    <a onClick={handleLessonClick} className="button button-primary">Voir la leçon</a>
+                    <button onClick={handleLessonClick} className="button button-primary">Voir la leçon</button>
                 </div>
             </div>
         </>
