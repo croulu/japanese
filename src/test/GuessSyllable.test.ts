@@ -3,6 +3,9 @@ import {Syllable} from "../domain/Syllable";
 import {Alphabet} from "../domain/Alphabet";
 import {LEVEL_VERY_DIFFICULT} from "../domain/Syllable.factory";
 
+const SYLLABLES_TO_KEEP_VERY_HARD_LESSON = 3;
+const SYLLABLES_TO_EXCLUDE_VERY_HARD_LESSON = 2;
+
 const hiragana:Alphabet = new Alphabet("hiragana");
 
 const syllables = [
@@ -49,13 +52,13 @@ describe('GuessSyllable', function () {
     it('should create proposals for level -très difficile-', function () {
         let sut = new GuessSyllable(syllables, levelTest);
 
-        expect(sut.proposals.length).toBe(2);
+        expect(sut.proposals.length).toBe(SYLLABLES_TO_KEEP_VERY_HARD_LESSON);
     });
 
     it('should create proposals excluded for level -très difficile-', function () {
         let sut = new GuessSyllable(syllables, levelTest);
 
-        expect(sut.proposalsExcluded.length).toBe(3);
+        expect(sut.proposalsExcluded.length).toBe(SYLLABLES_TO_EXCLUDE_VERY_HARD_LESSON);
     });
 
     it('should check if proposals excluded contains good answer', function () {
