@@ -32,7 +32,7 @@ describe('GuessKana', function () {
         expect(actual).toBeInstanceOf(SyllableKana);
     });
 
-    it(`should say true as the romaji proposed by the user is the good one`, function () {
+    it(`should say true      hd dhd h as the romaji proposed by the user is the good one`, function () {
         const sut = new GuessKana(syllables);
         sut.syllable = syllableToGuess;
         sut.romajiProposedByUser = romaji;
